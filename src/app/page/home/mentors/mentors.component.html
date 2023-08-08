@@ -1,0 +1,68 @@
+<article id="index-mentors">
+  <h1 class="text-center font-semibold text-3xl my-5">LES MENTORS</h1>
+
+  <div class="grid grid-cols-6 my-5">
+    <button (click)="slickModal.slickPrev()" class="justify-self-center">
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M15.75 19.5L8.25 12l7.5-7.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+    <ngx-slick-carousel
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+      class="carousel col-span-4 col-start-2"
+    >
+      <div *ngFor="let mentor of mentors" class="slide" ngxSlickItem>
+        <div [ngClass]="{'grid-cols-2': isLargeScreen, 'grid-rows-2': !isLargeScreen}" class="grid">
+          <div [ngClass]="{'row-start-2': !isLargeScreen}" class="self-center">
+            <h2
+              class="text-center text-2xl font-semibold underline decoration-1 mb-3"
+            >
+              {{mentor.firstname | uppercase | slice:0:1}}{{mentor.firstname | slice:1}}
+            </h2>
+            <p class="text-center">
+              {{ mentor.description }}
+            </p>
+          </div>
+          <div class="flex justify-center">
+            <img
+              [src]="'https://localhost:8000/res/img/avatar/mentors/' + mentor.avatar"
+              alt="{{ mentor.pseudo }}"
+              class="rounded-xl"
+              height="50%"
+              width="50%"
+            />
+          </div>
+
+        </div>
+      </div>
+    </ngx-slick-carousel>
+    <button (click)="slickModal.slickNext()" class="justify-self-center">
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.25 4.5l7.5 7.5-7.5 7.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+  </div>
+</article>

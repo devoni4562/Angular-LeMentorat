@@ -1,0 +1,97 @@
+<article class="text-center" id="staff">
+  <div class="pt-5">
+    <h2 class="font-bold underline text-3xl ">Nous.</h2>
+    <!-- ----------------------Co-Founder section------------------------------- -->
+    <div id="co-founder">
+      <h3 class="my-5  text-2xl font-semibold">Co-fondateur :</h3>
+      <div [ngClass]="'grid-cols-' + cofounders.length" class=" mb-8 grid grid-flow-col mx-52">
+        <div *ngFor="let member of cofounders">
+          <h4
+            class="text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
+          <div class="flex justify-center mb-3">
+            <img [src]="'https://localhost:8000/res/img/avatar/cofounder/' + member.avatar" alt="{{member.pseudo}}"
+                 class="rounded-full"
+                 height="145px"
+                 width="145px">
+          </div>
+          <p class="px-16">{{member.description}}</p>
+        </div>
+      </div>
+    </div>
+    <!-- ----------------------Mentors section------------------------------- -->
+    <app-white-section>
+      <div id="mentors">
+        <h3 class=" text-2xl font-semibold">Coaches :</h3>
+        <div [ngClass]="'grid-cols-' + mentors.length" class=" mb-8 grid grid-flow-col mx-52">
+          <div *ngFor="let member of mentors">
+            <h4
+              class="text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
+            <div class="flex justify-center mb-3">
+              <img [src]="'https://localhost:8000/res/img/avatar/mentors/' + member.avatar" alt="{{member.pseudo}}"
+                   class="rounded-full"
+                   height="145px"
+                   width="145px">
+            </div>
+            <p class="px-16">{{member.description}}</p>
+          </div>
+        </div>
+      </div>
+    </app-white-section>
+    <!-- ----------------------Administration section------------------------------- -->
+    <div class="grid grid-cols-2" id="administration">
+      <!-- ----------------------Assistance section------------------------------- -->
+      <div id="assistance">
+        <h3 class="my-5  text-2xl font-semibold">Assistante :</h3>
+        <div [ngClass]="'grid-cols-' + assistants.length" class=" mb-8 grid grid-flow-col">
+          <div *ngFor="let member of assistants">
+            <h4
+              class="text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
+            <div class="flex justify-center mb-3">
+              <img [src]="'https://localhost:8000/res/img/avatar/assistance/' + member.avatar" alt="{{member.pseudo}}"
+                   class="rounded-full"
+                   height="145px"
+                   width="145px">
+            </div>
+            <p class="px-16">{{member.description}}</p>
+          </div>
+        </div>
+      </div>
+      <!-- ----------------------CM section------------------------------- -->
+      <div id="community-manager">
+        <h3 class="my-5  text-2xl font-semibold">Community Manager :</h3>
+        <div [ngClass]="'grid-cols-' + communityManagers.length" class=" mb-8 grid grid-flow-col">
+          <div *ngFor="let member of communityManagers">
+            <h4
+              class="text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
+            <div class="flex justify-center mb-3">
+              <img [src]="'https://localhost:8000/res/img/avatar/cm/' + member.avatar" alt="{{member.pseudo}}"
+                   class="rounded-full"
+                   height="145px"
+                   width="145px">
+            </div>
+            <p class="px-16">{{member.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ----------------------Closer section------------------------------- -->
+    <app-white-section>
+      <div id="closer">
+        <h3 class=" text-2xl font-semibold">Closer :</h3>
+        <div [ngClass]="'grid-cols-' + closers.length" class=" mb-8 grid grid-flow-col mx-52">
+          <div *ngFor="let member of closers">
+            <h4
+              class="text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
+            <div class="flex justify-center mb-3">
+              <img [src]="'https://localhost:8000/res/img/avatar/closer/' + member.avatar" alt="{{member.pseudo}}"
+                   class="rounded-full"
+                   height="145px"
+                   width="145px">
+            </div>
+            <p class="px-16">{{member.description}}</p>
+          </div>
+        </div>
+      </div>
+    </app-white-section>
+  </div>
+</article>

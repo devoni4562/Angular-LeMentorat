@@ -1,0 +1,3 @@
+<?php //App%255CController%255CApi%255CArticleController%2523getArticles
+
+return [PHP_INT_MAX, []];

@@ -1,0 +1,72 @@
+<div>
+  <form (ngSubmit)="submitForm()" [formGroup]="form">
+    <!-- article -->
+    <h3>Information sur l'article :</h3>
+    <div id="title">
+      <label for="titleForm">Titre :</label>
+      <input formControlName="title" id="titleForm" type="text">
+    </div>
+
+    <div id="articleImg">
+      <label for="imgForm">Image :</label>
+      <input formControlName="image" id="imgForm" type="file">
+    </div>
+
+    <div id="category">
+      <label for="categoryForm">Categorie :</label>
+      <select formControlName="category" id="categoryForm">
+        <option *ngFor="let category of categories" [value]="category.id">{{category.wording}}</option>
+      </select>
+    </div>
+
+    <div id="articleVideo">
+      <label for="videoForm">Url Video :</label>
+      <input formControlName="video" id="videoForm" type="text">
+    </div>
+
+    <div>
+      <label for="summary">Résumé :</label>
+      <textarea formControlName="summary" id="summary" required></textarea>
+    </div>
+
+    <!-- Paragraph -->
+    <h3>Paragraphe :</h3>
+    <div formArrayName="paragraphs">
+      <div *ngFor="let paragraph of formParagraphs.controls; let i = index" class="mb-5">
+        <div [formGroupName]="i">
+          <h4>Paragraphe {{i + 1}}:</h4>
+          <div>
+            <label for="paragraphTitle{{i}}">Titre :</label>
+            <input formControlName="paragraphTitle" id="paragrapheTitle{{i}}" required type="text">
+          </div>
+
+          <div>
+            <label for="paragraphImg{{i}}">Image :</label>
+            <input formControlName="paragraphImage" id="paragraphImg{{i}}" type="file">
+          </div>
+
+          <div>
+            <label for="paragraphText{{i}}">Texte :</label>
+            <textarea formControlName="paragraphText" id="paragraphText{{i}}" required></textarea>
+          </div>
+
+          <div>
+            <label for="paragraphLink{{i}}">Lien :</label>
+            <input formControlName="paragraphLink" id="paragraphLink{{i}}" type="text">
+          </div>
+          <div *ngIf="paragraph.get('paragraphLink')?.dirty && paragraph.get('paragraphLink')?.value !== ''">
+            <label for="paragraphLinkText{{i}}">Phrase d'accroche du lien :</label>
+            <input formControlName="paragraphLinkText" id="paragraphLinkText{{i}}" type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button (click)="addParagraph()" type="button">Ajouter un paragraphe</button>
+    </div>
+
+    <div>
+      <button type="submit">valider</button>
+    </div>
+  </form>
+</div>

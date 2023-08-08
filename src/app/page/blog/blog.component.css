@@ -1,0 +1,18 @@
+.selectbox-round
+{
+  width              : 1em;
+  height             : 1em;
+  background-color   : white;
+  border-radius      : 50%;
+  border             : 1px solid #122D4E;
+  appearance         : none;
+  -webkit-appearance : none;
+  outline            : none;
+  cursor             : pointer;
+}
+
+.selectbox-round:checked
+{
+  background-color : #122D4E;
+  border           : 1px solid white;
+}

@@ -1,0 +1,19 @@
+<article id="witnesses">
+  <h1 class="text-center font-semibold text-3xl">
+    ILS ONT SUIVI LE MENTORAT
+  </h1>
+  <div [ngClass]="{'grid-cols-4 gap-16 mx-28 mt-8': isLargeScreen, 'grid-row-4 mt-8':!isLargeScreen}" class="grid">
+    <div *ngFor="let witness of witnesses" class="grid justify-items-center">
+      <img
+        [src]="'https://localhost:8000/res/img/avatar/witnesses/' + witness.avatar"
+        alt="{{ witness.lastname }}"
+        class="rounded-full w-[265px]"
+      />
+      <div class="my-5">
+        <h2 class="text-center font-semibold text-lg">{{ witness.firstname | uppercase}}</h2>
+        <h3 class="text-center font-semibold text-sm">{{witness.pseudo}}</h3>
+        <p class="text-justify w-[200px] mt-2">{{ witness.description }}</p>
+      </div>
+    </div>
+  </div>
+</article>

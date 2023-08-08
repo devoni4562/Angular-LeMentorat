@@ -1,0 +1,13 @@
+.bg-img
+{
+  background-image    : url(https://localhost:8000/res/img/index/seminaire.JPG);
+
+  background-size     : cover;
+  background-repeat   : no-repeat;
+  background-position : center;
+}
+
+.bg-opacity
+{
+  background-color : rgba(255, 255, 255, 0.5);
+}

@@ -1,0 +1,72 @@
+<article class="grid grid-cols-1 justify-items-center gap-y-5" id="{{article?.title}}">
+  <h2 class="text-5xl text-justify font-semibold my-5 w-2/3">{{article?.title}}</h2>
+  <div class="w-full">
+    <app-white-section>
+      <div class="flex justify-center">
+        <p class="w-2/3 text-lg">{{article?.summary}}</p>
+      </div>
+    </app-white-section>
+  </div>
+
+  <section class="w-2/3">
+    <div [ngClass]="{'flex-col': !isLargeScreen, 'justify-self-start flex': isLargeScreen}" class="flex" id="summary">
+      <h3 [ngClass]="{'text-center mb-5': !isLargeScreen}" class="underline underline-offset-4 font-semibold text-xl">
+        Sommaire:</h3>
+      <ul [ngClass]="{'ms-10': isLargeScreen}"
+          class="bg-[#122D4E] text-[#EEF7FF] p-5 rounded-xl grid grid-cols-1 gap-y-5 ">
+        <li *ngFor="let paragraph of article?.paragraphs; let i = index">
+          <a (click)="scrollToAnchor(paragraph.title)"
+             class="cursor-pointer underline underline-offset-2">{{paragraph.title}}</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div *ngFor="let paragraph of article?.paragraphs; let i = index" class="w-full grid justify-items-center">
+    <div *ngIf="i%2 !== 0" class="w-2/3 p-5 grid grid-cols-1 gap-y-5">
+      <h3 class="underline underline-offset-4 font-semibold text-xl" id="{{paragraph.title}}">{{paragraph.title}}</h3>
+      <p class="text-justify">{{paragraph.text}}</p>
+      <div *ngIf="paragraph.link" class="grid grid-cols-1 gap-y-1">
+        <p *ngIf="paragraph.linkText">{{paragraph.linkText}}</p>
+        <div [ngClass]="{'ms-5': isLargeScreen}" class="ms-5 flex">
+          <svg *ngIf="isLargeScreen" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5"
+               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+
+          <a [ngClass]="{'ms-2': isLargeScreen}" class="underline hover:text-orange-400" href="{{paragraph.link}}"
+             target="_blank">{{paragraph.link}}</a>
+        </div>
+      </div>
+      <img *ngIf="paragraph.image"
+           [src]="'https://localhost:8000/res/articles/'+article.title.replaceAll(' ', '_')+'/paragraphs/'+paragraph.image"
+           alt="Image Paragraphe {{i}}"/>
+    </div>
+    <div *ngIf="i%2 === 0" class="w-full">
+      <app-white-section>
+        <div class="grid justify-items-center">
+          <div class="w-2/3 grid grid-cols-1 gap-y-5">
+            <h3 class="underline underline-offset-4 font-semibold text-xl"
+                id="{{paragraph.title}}">{{paragraph.title}}</h3>
+            <p class="text-justify">{{paragraph.text}}</p>
+            <div *ngIf="paragraph.link" class="grid grid-cols-1 gap-y-1">
+              <p *ngIf="paragraph.linkText">{{paragraph.linkText}}</p>
+              <div [ngClass]="{'ms-5': isLargeScreen}" class="ms-5 flex">
+                <svg *ngIf="isLargeScreen" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5"
+                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+
+                <a [ngClass]="{'ms-2': isLargeScreen}" class="underline hover:text-orange-400" href="{{paragraph.link}}"
+                   target="_blank">{{paragraph.link}}</a>
+              </div>
+            </div>
+            <img *ngIf="paragraph.image"
+                 [src]="'https://localhost:8000/res/articles/'+article.title.replaceAll(' ', '_')+'/paragraphs/'+paragraph.image"
+                 alt="Image Paragraphe"/>
+          </div>
+        </div>
+      </app-white-section>
+    </div>
+  </div>
+</article>

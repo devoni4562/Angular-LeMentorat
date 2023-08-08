@@ -1,0 +1,11 @@
+/* CSS pour le flou */
+.overlay
+{
+  width            : 100%;
+  height           : 100%;
+  background-color : rgba(0, 0, 0, 0.5); /* Couleur de fond semi-transparente */
+  backdrop-filter  : blur(8px); /* Effet de flou */
+  z-index          : 9999; /* Assure que l'overlay est au-dessus de tout le contenu */
+  pointer-events   : none; /* Permet aux éléments en dessous de l'overlay de rester cliquables */
+}
+

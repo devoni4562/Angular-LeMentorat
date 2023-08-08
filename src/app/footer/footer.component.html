@@ -1,0 +1,54 @@
+<!-- CGV modal -->
+<div *ngIf="showCGVModal"
+     class="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-20"
+     id="cgvModal">
+  <div class="bg-[#EEF7FF] p-4 rounded-lg w-2/3 h-full flex flex-col justify-end">
+    <object [data]="CGVLink" height="95%" type="application/pdf" width="100%"></object>
+    <button (click)="showCGVModal = false" class="flex self-end mt-4 px-4 py-2 bg-[#122D4E] text-[#EEF7FF] rounded-lg">
+      Fermer
+    </button>
+  </div>
+</div>
+
+<!-- mention legal modal -->
+<div *ngIf="showLegalMention"
+     class="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-20"
+     id="legalMentionModal">
+  <div class="bg-[#EEF7FF] p-4 rounded-lg w-2/3 h-full flex flex-col justify-end">
+    <object [data]="legalMentionLink" height="95%" type="application/pdf" width="100%"></object>
+    <button (click)="showLegalMention = false"
+            class="flex self-end mt-4 px-4 py-2 bg-[#122D4E] text-[#EEF7FF] rounded-lg">Fermer
+    </button>
+  </div>
+</div>
+
+<!-- footer -->
+<footer class="bg-[#122D4E] text-[#EEF7FF] grid grid-cols-5">
+  <div class="col-span-3 self-center col-start-2">
+    <p class="text-center">
+      <span class="text-lg">Le mentorat&copy;</span>
+      <br/>
+      <button (click)="showCGVModal = true" class="underline">
+        Condition général de vente
+      </button>
+      <span> - </span>
+      <button (click)="showLegalMention = true" class="underline">Mentions légales</button>
+    </p>
+  </div>
+  <div *ngIf="isLargeScreen">
+    <app-reseaux></app-reseaux>
+  </div>
+  <div *ngIf="!isLargeScreen" class="flex justify-end items-center">
+    <svg (click)="toggleReseaux()" class="w-6 h-6 mr-[5%]" fill="none" stroke="currentColor" stroke-width="1.5"
+         viewBox="0 0 24 24"
+         xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+            stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div *ngIf="showReseaux"
+       class="fixed bottom-10 right-0 bg-[#122D4E] rounded-xl">
+    <app-reseaux></app-reseaux>
+  </div>
+</footer>

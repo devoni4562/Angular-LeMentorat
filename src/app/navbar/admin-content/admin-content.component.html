@@ -1,0 +1,22 @@
+<div (mouseleave)="artDropdown = false">
+  <a
+    (click)="artDropdownToggle()"
+    (mouseover)="artDropdown = true"
+    [ngClass]="{'hover:bg-[#EEF7FF] hover:text-[#122D4E]': isLargeScreen}"
+    class="block px-4 py-2"
+  >Article</a>
+  <div *ngIf="artDropdown" class="w-full rounded-r-md text-center text-[#EEF7FF] flex-initial">
+    <app-article-content></app-article-content>
+  </div>
+</div>
+<a
+  [ngClass]="{'hover:bg-[#EEF7FF] hover:text-[#122D4E]': isLargeScreen}"
+  class="block px-4 py-2"
+>Conférence Live</a
+>
+<a
+  [ngClass]="{'hover:bg-[#EEF7FF] hover:text-[#122D4E]': isLargeScreen}"
+  class="block px-4 py-2 "
+>panneau d'administration</a
+>
+

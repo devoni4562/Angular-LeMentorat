@@ -1,0 +1,33 @@
+<article id="lastNews">
+  <div [ngClass]="{'grid grid-cols-2 justify-items-center': isLargeScreen}">
+    <div *ngIf="isLargeScreen" class="w-full h-full">
+      <app-youtube-video-insert
+        [id]="'indexVideo'"
+        [link]="'https://www.youtube.com/embed/astF0e56w-s'"
+        [title]="'SÉMINAIRE LE MENTORAT : Les clés de notre lancement à +100k€'"
+      ></app-youtube-video-insert>
+    </div>
+    <div
+      class="place-self-stretch"
+      id="text-presentation"
+    >
+      <div>
+        <h3 class="text-center text-3xl font-semibold">
+          Nous avons accompagné + de 2000 projets dans leur croissance
+        </h3>
+        <p class="text-xl mt-[6%]">
+          Nous pensons que chaque personne qui se donne les moyens a la capacité de développer l’entreprise de ses
+          rêves.
+          Nous avons mis au point la méthode “Mentorat” pour accélérer votre développement et enfin libérer le plein
+          potentiel qui sommeille en vous.
+        </p>
+      </div>
+      <div
+        class="underline hover:text-orange-500 self-center mt-[6%]"
+        id="aboutUs"
+      >
+        <a routerLink="/mentorat_s-method">Découvrez la méthode `Le Mentorat`.</a>
+      </div>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,31 @@
+<div [id]="'articleN' + article.id"
+     class="flex flex-col justify-center items-center"
+>
+  <!-- no hover -->
+  <div
+    (mouseover)="zoom = true"
+    *ngIf="!zoom"
+    [style.background-image]="'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url(https://localhost:8000/res/articles/' + article.title.replaceAll(' ', '_')+'/'+ article.image +')'"
+    class="h-80 w-1/2 bg-img flex justify-center items-center">
+    <h2 class="text-5xl font-bold text-[#EEF7FF] text-justify w-2/3">{{article.title}}</h2>
+  </div>
+  <!-- hover -->
+  <div
+    (click)="redirectToArticleDetails(article.title)"
+    (mouseleave)="zoom = false"
+    *ngIf="zoom"
+    [ngClass]="'bg-'+bg"
+    class="h-80 w-1/2 flex justify-center items-center"
+  >
+    <h2 class="text-xl font-bold text-justify w-2/3">{{article.summary}}</h2>
+  </div>
+  <!-- createur -->
+  <div class="mt-4 text-center">
+    <div class="flex justify-center">
+      <img [src]="'https://localhost:8000/res/img/avatar/admin/' + article.writer.avatar" alt="avatar"
+           class=" w-12 rounded-full">
+    </div>
+    <p>Par {{article.writer.pseudo}}</p>
+    <p>Le {{article.date | date: 'dd-MM-yyyy'}}</p>
+  </div>
+</div>

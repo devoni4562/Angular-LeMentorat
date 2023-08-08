@@ -1,0 +1,102 @@
+<!-- <a routerLink="/admin/create-article">create article</a> -->
+<div class=" my-3">
+  <div class="grid grid-cols-3 place-content-evenly">
+    <!-- category sorting -->
+    <div class="grid grid-cols-2 px-[15%] h-[48px] justify-items-end">
+      <div *ngFor="let category of categories" class="">
+        <label [for]="category" class="me-2 font-medium">{{category}}</label>
+        <input #categoryCheckbox (change)="filterArticles()" [id]="category" [value]="category"
+               class="selectbox-round"
+               type="checkbox">
+      </div>
+    </div>
+    <div class="grid grid-cols-1">
+      <!-- name sorting -->
+      <div class="place-self-center w-5/6">
+        <input (input)="filterArticles()" [(ngModel)]="searchText"
+               class="w-full text-center h-8 border border-[#122D4E] rounded-lg placeholder-[#122D4E]"
+               placeholder="Rechercher..."
+               type="text">
+      </div>
+      <!-- writer sorting -->
+      <div class="mt-2 place-self-center w-4/6">
+        <select (change)="filterArticles()" [(ngModel)]="selectedWriter"
+                class="w-full text-center h-8 border border-[#122D4E] rounded-lg">
+          <option disabled selected value="">--Choisissez un Auteur--</option>
+          <option value="">Tous</option>
+          <option *ngFor="let writer of writers" [value]="writer">{{writer}}</option>
+        </select>
+      </div>
+    </div>
+    <!-- date sorting -->
+    <div class="">
+      <div class="grid grid-cols-2 justify-items-start px-[15%]">
+        <div>
+          <input (change)="filterArticles()" [(ngModel)]="dateFilterType" class="selectbox-round" id="recent"
+                 name="dateFilter" type="radio"
+                 value="recentToOld">
+          <label class="ms-2 font-medium" for="recent">Les plus récents</label>
+        </div>
+        <div>
+          <input (change)="filterArticles()" [(ngModel)]="dateFilterType" class="selectbox-round" id="old"
+                 name="dateFilter"
+                 type="radio"
+                 value="oldToRecent"
+          >
+          <label class="ms-2 font-medium" for="old">Les plus anciens</label>
+        </div>
+        <div>
+          <input (change)="filterArticles()" [(ngModel)]="dateFilterType" class="selectbox-round" id="specific"
+                 name="dateFilter"
+                 type="radio"
+                 value="specificDate">
+          <label class="ms-2 font-medium" for="specific">Date précise</label>
+        </div>
+        <div>
+          <input (change)="filterArticles()" [(ngModel)]="dateFilterType" class="selectbox-round" id="between"
+                 name="dateFilter"
+                 type="radio"
+                 value="betweenDates">
+          <label class="ms-2 font-medium" for="between">Entre deux dates</label>
+        </div>
+      </div>
+      <div *ngIf="dateFilterType === 'specificDate'" class="flex justify-center items-center me-24 mt-2">
+        <label for="specificDate">Sélectionnez une date :</label>
+        <input (change)="filterArticles()" [max]="newestDate" [min]="oldestDate"
+               class="bg-white border border-[#122D4E] text-[#122D4E] text-sm rounded-lg focus:ring-[#122D4E] focus:border-[#122D4E] block p-2.5"
+               id="specificDate"
+               type="date">
+      </div>
+      <div *ngIf="dateFilterType === 'betweenDates'" class="flex justify-evenly mt-2 2xl:me-[12%]  text-center">
+        <div>
+          <label for="startDate">à partir du :</label>
+          <input (change)="filterArticles()" [max]="newestDate" [min]="oldestDate"
+                 class="bg-white border border-[#122D4E] text-[#122D4E] text-sm rounded-lg focus:ring-[#122D4E] focus:border-[#122D4E] block w-full p-2.5 me-2"
+                 id="startDate"
+                 type="date"
+          >
+        </div>
+        <div>
+          <label for="endDate">jusqu'au :</label>
+          <input (change)="filterArticles()" [max]="newestDate" [min]="oldestDate"
+                 class="bg-white border border-[#122D4E] text-sm rounded-lg focus:ring-[#122D4E] focus:border-[#122D4E] block w-full p-2.5"
+                 id="endDate"
+                 type="date"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- liste article -->
+</div>
+<div *ngFor="let article of filteredArticles; let i = index">
+  <div *ngIf="i % 2 !== 0" class="m-6">
+    <app-list-article [article]="article" [bg]="'white'"></app-list-article>
+  </div>
+  <div *ngIf="i % 2 === 0">
+    <app-white-section>
+      <app-list-article [article]="article" [bg]="'[#EEF7FF]'"></app-list-article>
+    </app-white-section>
+  </div>
+</div>
