@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit
 
   getAdmin()
   {
-    this.http.get<any[]>('https://localhost:8000/api/admin/get_all_admin').subscribe(
+    this.http.get<any[]>('https://api-le-mentorat-fabdab54a40e.herokuapp.com/api/admin/get_all_admin').subscribe(
       (data: any[]) =>
       {
         this.admins = data;

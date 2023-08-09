@@ -8,7 +8,7 @@ export class CategoryService
 {
 
 
-  private apiUrl = 'https://localhost:8000/api/category/';
+  private apiUrl = 'https://api-le-mentorat-fabdab54a40e.herokuapp.com/api/category/';
 
   constructor(private http: HttpClient)
   {

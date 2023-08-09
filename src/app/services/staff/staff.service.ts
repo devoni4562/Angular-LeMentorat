@@ -7,7 +7,7 @@ import {HttpClient} from "@angular/common/http";
 export class StaffService
 {
 
-  private apiUrl = 'https://localhost:8000/api/members/staff';
+  private apiUrl = 'https://api-le-mentorat-fabdab54a40e.herokuapp.com/api/members/staff';
 
   constructor(private http: HttpClient)
   {

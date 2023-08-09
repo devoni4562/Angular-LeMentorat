@@ -9,7 +9,7 @@ import {HttpClient} from "@angular/common/http";
 export class LiveConferenceComponent implements OnInit
 {
   link: string = '';
-  urlFile: string = 'https://localhost:8000/getConferenceSubscribeLink';
+  urlFile: string = 'https://api-le-mentorat-fabdab54a40e.herokuapp.com/getConferenceSubscribeLink';
 
   constructor(private http: HttpClient)
   {

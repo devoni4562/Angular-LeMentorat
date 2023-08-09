@@ -18,9 +18,10 @@ export class FooterComponent
 
   constructor(sanitizer: DomSanitizer, private screenWidthService: ScreenWidthService)
   {
-    this.CGVLink = sanitizer.bypassSecurityTrustResourceUrl('https://localhost:8000/res/pdf/CGV.pdf');
+    this.CGVLink = sanitizer.bypassSecurityTrustResourceUrl(
+      'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/pdf/CGV.pdf');
     this.legalMentionLink = sanitizer.bypassSecurityTrustResourceUrl(
-      'https://localhost:8000/res/pdf/mentions_legales.pdf');
+      'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/pdf/mentions_legales.pdf');
 
     this.screenWidthService.isLargeScreen$.subscribe(isLargeScreen =>
     {

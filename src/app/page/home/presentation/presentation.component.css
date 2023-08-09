@@ -1,6 +1,6 @@
 .bg-img
 {
-  background-image    : url(https://localhost:8000/res/img/index/seminaire.JPG);
+  background-image    : url(https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/img/index/seminaire.JPG);
 
   background-size     : cover;
   background-repeat   : no-repeat;

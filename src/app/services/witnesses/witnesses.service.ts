@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class WitnessesService
 {
-  private apiUrl = 'https://localhost:8000/api/members/witnesses';
+  private apiUrl = 'https://api-le-mentorat-fabdab54a40e.herokuapp.com/api/members/witnesses';
 
   constructor(private http: HttpClient)
   {

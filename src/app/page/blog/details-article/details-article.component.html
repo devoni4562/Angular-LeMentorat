@@ -39,7 +39,7 @@
         </div>
       </div>
       <img *ngIf="paragraph.image"
-           [src]="'https://localhost:8000/res/articles/'+article.title.replaceAll(' ', '_')+'/paragraphs/'+paragraph.image"
+           [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/articles/'+article.title.replaceAll(' ', '_')+'/paragraphs/'+paragraph.image"
            alt="Image Paragraphe {{i}}"/>
     </div>
     <div *ngIf="i%2 === 0" class="w-full">
@@ -62,7 +62,7 @@
               </div>
             </div>
             <img *ngIf="paragraph.image"
-                 [src]="'https://localhost:8000/res/articles/'+article.title.replaceAll(' ', '_')+'/paragraphs/'+paragraph.image"
+                 [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/articles/'+article.title.replaceAll(' ', '_')+'/paragraphs/'+paragraph.image"
                  alt="Image Paragraphe"/>
           </div>
         </div>

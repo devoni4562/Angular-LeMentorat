@@ -9,7 +9,8 @@
           <h4
             class="text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
           <div class="flex justify-center mb-3">
-            <img [src]="'https://localhost:8000/res/img/avatar/cofounder/' + member.avatar" alt="{{member.pseudo}}"
+            <img [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/img/avatar/cofounder/' + member.avatar"
+                 alt="{{member.pseudo}}"
                  class="rounded-full"
                  height="145px"
                  width="145px">
@@ -27,7 +28,8 @@
             <h4
               class="text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
             <div class="flex justify-center mb-3">
-              <img [src]="'https://localhost:8000/res/img/avatar/mentors/' + member.avatar" alt="{{member.pseudo}}"
+              <img [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/img/avatar/mentors/' + member.avatar"
+                   alt="{{member.pseudo}}"
                    class="rounded-full"
                    height="145px"
                    width="145px">
@@ -47,10 +49,12 @@
             <h4
               class="text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
             <div class="flex justify-center mb-3">
-              <img [src]="'https://localhost:8000/res/img/avatar/assistance/' + member.avatar" alt="{{member.pseudo}}"
-                   class="rounded-full"
-                   height="145px"
-                   width="145px">
+              <img
+                [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/img/avatar/assistance/' + member.avatar"
+                alt="{{member.pseudo}}"
+                class="rounded-full"
+                height="145px"
+                width="145px">
             </div>
             <p class="px-16">{{member.description}}</p>
           </div>
@@ -64,7 +68,8 @@
             <h4
               class="text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
             <div class="flex justify-center mb-3">
-              <img [src]="'https://localhost:8000/res/img/avatar/cm/' + member.avatar" alt="{{member.pseudo}}"
+              <img [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/img/avatar/cm/' + member.avatar"
+                   alt="{{member.pseudo}}"
                    class="rounded-full"
                    height="145px"
                    width="145px">
@@ -83,7 +88,8 @@
             <h4
               class="text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
             <div class="flex justify-center mb-3">
-              <img [src]="'https://localhost:8000/res/img/avatar/closer/' + member.avatar" alt="{{member.pseudo}}"
+              <img [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/img/avatar/closer/' + member.avatar"
+                   alt="{{member.pseudo}}"
                    class="rounded-full"
                    height="145px"
                    width="145px">

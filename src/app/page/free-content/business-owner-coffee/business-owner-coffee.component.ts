@@ -11,7 +11,7 @@ export class BusinessOwnerCoffeeComponent implements OnInit
   link: string = '';
   date: string = '';
   place: string = '';
-  urlFile: string = 'https://localhost:8000/getCoffeeSubscribeInfo';
+  urlFile: string = 'https://api-le-mentorat-fabdab54a40e.herokuapp.com/getCoffeeSubscribeInfo';
 
   constructor(private http: HttpClient)
   {

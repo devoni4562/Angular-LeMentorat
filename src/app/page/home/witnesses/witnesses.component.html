@@ -5,7 +5,7 @@
   <div [ngClass]="{'grid-cols-4 gap-16 mx-28 mt-8': isLargeScreen, 'grid-row-4 mt-8':!isLargeScreen}" class="grid">
     <div *ngFor="let witness of witnesses" class="grid justify-items-center">
       <img
-        [src]="'https://localhost:8000/res/img/avatar/witnesses/' + witness.avatar"
+        [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/img/avatar/witnesses/' + witness.avatar"
         alt="{{ witness.lastname }}"
         class="rounded-full w-[265px]"
       />
