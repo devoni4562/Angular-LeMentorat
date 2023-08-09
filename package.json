@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -28,8 +29,8 @@
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^16.1.0",
-    "@angular/cli": "~16.1.0",
+    "@angular-devkit/build-angular": "^16.1.8",
+    "@angular/cli": "~16.1.8",
     "@angular/compiler-cli": "^16.1.8",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.6.0",
