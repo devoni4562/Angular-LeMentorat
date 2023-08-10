@@ -19,6 +19,7 @@ const adminRoutes: Routes = [
           {path: 'create-article', component: CreateArticleComponent},
           {path: 'delete-article', component: DeleteArticleComponent},
           {path: 'update-article', component: UpdateArticleComponent},
+
         ]
       }
     ]
