@@ -41,7 +41,6 @@ export class ArticleService
 
   createNewArticle(form: any)
   {
-    console.log(form);
     const articleFormData: FormData = new FormData();
 
     articleFormData.append('category', form.get('category').value);
@@ -82,9 +81,5 @@ export class ArticleService
 
     return this.http.post<any>(this.apiUrl + 'new', articleFormData);
 
-  }
-
-  getForm()
-  {
   }
 }

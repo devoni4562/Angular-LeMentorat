@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {StaffService} from "../../../services/staff/staff.service";
+import {ScreenWidthService} from "../../../services/screen-width/screen-width.service";
 
 @Component({
   selector: 'app-staff',
@@ -14,14 +15,19 @@ export class StaffComponent implements OnInit
   assistants: any[] = [];
   communityManagers: any[] = [];
   closers: any[] = [];
+  isLargeScreen: boolean = true;
 
-
-  constructor(private staffService: StaffService)
+  constructor(private staffService: StaffService, private screenWidthService: ScreenWidthService)
   {
   }
 
   ngOnInit()
   {
+    this.screenWidthService.isLargeScreen$.subscribe(isLargeScreen =>
+    {
+      this.isLargeScreen = isLargeScreen;
+    });
+
     this.staffService.getStaff().subscribe((staff: any[]) =>
     {
       this.sorting(staff);
@@ -30,7 +36,7 @@ export class StaffComponent implements OnInit
 
   sorting(staff: any[])
   {
-    
+
     staff.forEach((member) =>
     {
 

@@ -5,6 +5,13 @@ import {CreateArticleComponent} from "./article/create-article/create-article.co
 import {authGuard} from "../security/routingSecurity/auth.guard";
 import {DeleteArticleComponent} from "./article/delete-article/delete-article.component";
 import {UpdateArticleComponent} from "./article/update-article/update-article.component";
+import {DashboardComponent} from "./dashboard/dashboard.component";
+import {CreateMemberComponent} from "./member/create-member/create-member.component";
+import {UpdateMemberComponent} from "./member/update-member/update-member.component";
+import {DeleteMemberComponent} from "./member/delete-member/delete-member.component";
+import {CreateCategoryComponent} from "./category/create-category/create-category.component";
+import {UpdateCategoryComponent} from "./category/update-category/update-category.component";
+import {DeleteCategoryComponent} from "./category/delete-category/delete-category.component";
 
 const adminRoutes: Routes = [
   {
@@ -13,12 +20,34 @@ const adminRoutes: Routes = [
     canActivate: [authGuard],
     children: [
       {
-        path: '',
+        path: 'article',
         canActivateChild: [authGuard],
         children: [
-          {path: 'create-article', component: CreateArticleComponent},
-          {path: 'delete-article', component: DeleteArticleComponent},
-          {path: 'update-article', component: UpdateArticleComponent},
+          {path: 'create', component: CreateArticleComponent},
+          {path: 'delete', component: DeleteArticleComponent},
+          {path: 'update', component: UpdateArticleComponent},
+        ]
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent
+      },
+      {
+        path: 'member',
+        canActivateChild: [authGuard],
+        children: [
+          {path: 'create', component: CreateMemberComponent},
+          {path: 'update', component: UpdateMemberComponent},
+          {path: 'delete', component: DeleteMemberComponent}
+        ]
+      },
+      {
+        path: 'category',
+        canActivateChild: [authGuard],
+        children: [
+          {path: 'create', component: CreateCategoryComponent},
+          {path: 'update', component: UpdateCategoryComponent},
+          {path: 'delete', component: DeleteCategoryComponent}
         ]
       }
     ]

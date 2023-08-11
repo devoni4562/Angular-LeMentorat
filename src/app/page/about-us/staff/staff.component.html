@@ -1,56 +1,63 @@
-<article class="text-center" id="staff">
-  <div class="pt-5">
+<article class="text-justify" id="staff">
+  <div class="pt-5 grid justify-items-center">
     <h2 class="font-bold underline text-3xl ">Nous.</h2>
     <!-- ----------------------Co-Founder section------------------------------- -->
-    <div id="co-founder">
+    <div class="grid justify-items-center" id="co-founder">
       <h3 class="my-5  text-2xl font-semibold">Co-fondateur :</h3>
-      <div [ngClass]="'grid-cols-' + cofounders.length" class=" mb-8 grid grid-flow-col mx-52">
-        <div *ngFor="let member of cofounders">
+      <div [ngClass]="isLargeScreen ? 'grid-cols-' + cofounders.length : 'grid-rows-' + cofounders.length"
+           class=" mb-8 grid justify-items-center w-2/3">
+        <div *ngFor="let member of cofounders" class="grid justify-items-center">
           <h4
-            class="text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
+            class="text-center text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
           <div class="flex justify-center mb-3">
-            <img [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/img/avatar/cofounder/' + member.avatar"
-                 alt="{{member.pseudo}}"
-                 class="rounded-full"
-                 height="145px"
-                 width="145px">
+            <img
+              [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/avatar/'+member.job.name+ '/'+member.email+'/' + member.avatar"
+              alt="{{member.pseudo}}"
+              class="rounded-full"
+              height="145px"
+              width="145px">
           </div>
           <p class="px-16">{{member.description}}</p>
         </div>
       </div>
     </div>
     <!-- ----------------------Mentors section------------------------------- -->
-    <app-white-section>
-      <div id="mentors">
-        <h3 class=" text-2xl font-semibold">Coaches :</h3>
-        <div [ngClass]="'grid-cols-' + mentors.length" class=" mb-8 grid grid-flow-col mx-52">
-          <div *ngFor="let member of mentors">
-            <h4
-              class="text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
-            <div class="flex justify-center mb-3">
-              <img [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/img/avatar/mentors/' + member.avatar"
-                   alt="{{member.pseudo}}"
-                   class="rounded-full"
-                   height="145px"
-                   width="145px">
+    <div class="w-full">
+      <app-white-section>
+        <div class="grid justify-items-center" id="mentors">
+          <h3 class=" text-2xl font-semibold">Coaches :</h3>
+          <div [ngClass]="isLargeScreen ? 'grid-cols-' + mentors.length : 'grid-rows-' + mentors.length"
+               class="grid grid-flow-col w-2/3">
+            <div *ngFor="let member of mentors" class="grid justify-items-center">
+              <h4
+                class="text-center text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
+              <div class="flex justify-center mb-3">
+                <img
+                  [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/avatar/'+member.job.name+ '/'+member.email+'/' + member.avatar"
+                  alt="{{member.pseudo}}"
+                  class="rounded-full"
+                  height="145px"
+                  width="145px">
+              </div>
+              <p class="px-16">{{member.description}}</p>
             </div>
-            <p class="px-16">{{member.description}}</p>
           </div>
         </div>
-      </div>
-    </app-white-section>
+      </app-white-section>
+    </div>
     <!-- ----------------------Administration section------------------------------- -->
-    <div class="grid grid-cols-2" id="administration">
+    <div [ngClass]="isLargeScreen ? 'grid-cols-2' : 'grid-rows-2 w-2/3'" class="grid" id="administration">
       <!-- ----------------------Assistance section------------------------------- -->
-      <div id="assistance">
+      <div class="grid justify-items-center" id="assistance">
         <h3 class="my-5  text-2xl font-semibold">Assistante :</h3>
-        <div [ngClass]="'grid-cols-' + assistants.length" class=" mb-8 grid grid-flow-col">
-          <div *ngFor="let member of assistants">
+        <div [ngClass]="isLargeScreen ? 'grid-cols-' + assistants.length : 'grid-rows-' + assistants.length"
+             class=" mb-8 grid grid-flow-col">
+          <div *ngFor="let member of assistants" class="grid justify-items-center">
             <h4
-              class="text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
+              class="text-center text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
             <div class="flex justify-center mb-3">
               <img
-                [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/img/avatar/assistance/' + member.avatar"
+                [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/avatar/'+member.job.name+ '/'+member.email+'/' + member.avatar"
                 alt="{{member.pseudo}}"
                 class="rounded-full"
                 height="145px"
@@ -61,18 +68,21 @@
         </div>
       </div>
       <!-- ----------------------CM section------------------------------- -->
-      <div id="community-manager">
-        <h3 class="my-5  text-2xl font-semibold">Community Manager :</h3>
-        <div [ngClass]="'grid-cols-' + communityManagers.length" class=" mb-8 grid grid-flow-col">
-          <div *ngFor="let member of communityManagers">
+      <div class="grid justify-items-center" id="community-manager">
+        <h3 class="my-5 text-2xl font-semibold">Community Manager :</h3>
+        <div
+          [ngClass]="isLargeScreen ? 'grid-cols-' + communityManagers.length : 'grid-rows-' + communityManagers.length"
+          class=" mb-8 grid grid-flow-col">
+          <div *ngFor="let member of communityManagers" class="grid justify-items-center">
             <h4
-              class="text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
+              class="text-center text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
             <div class="flex justify-center mb-3">
-              <img [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/img/avatar/cm/' + member.avatar"
-                   alt="{{member.pseudo}}"
-                   class="rounded-full"
-                   height="145px"
-                   width="145px">
+              <img
+                [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/avatar/'+member.job.name+ '/'+member.email+'/' + member.avatar"
+                alt="{{member.pseudo}}"
+                class="rounded-full"
+                height="145px"
+                width="145px">
             </div>
             <p class="px-16">{{member.description}}</p>
           </div>
@@ -80,24 +90,28 @@
       </div>
     </div>
     <!-- ----------------------Closer section------------------------------- -->
-    <app-white-section>
-      <div id="closer">
-        <h3 class=" text-2xl font-semibold">Closer :</h3>
-        <div [ngClass]="'grid-cols-' + closers.length" class=" mb-8 grid grid-flow-col mx-52">
-          <div *ngFor="let member of closers">
-            <h4
-              class="text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
-            <div class="flex justify-center mb-3">
-              <img [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/img/avatar/closer/' + member.avatar"
-                   alt="{{member.pseudo}}"
-                   class="rounded-full"
-                   height="145px"
-                   width="145px">
+    <div class="w-full">
+      <app-white-section>
+        <div class="grid justify-items-center" id="closers">
+          <h3 class=" text-2xl font-semibold">Coaches :</h3>
+          <div [ngClass]="isLargeScreen ? 'grid-cols-' + closers.length : 'grid-rows-' + closers.length"
+               class="grid grid-flow-col w-2/3">
+            <div *ngFor="let member of closers" class="grid justify-items-center">
+              <h4
+                class="text-center text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
+              <div class="flex justify-center mb-3">
+                <img
+                  [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/avatar/'+member.job.name+ '/'+member.email+'/' + member.avatar"
+                  alt="{{member.pseudo}}"
+                  class="rounded-full"
+                  height="145px"
+                  width="145px">
+              </div>
+              <p class="px-16">{{member.description}}</p>
             </div>
-            <p class="px-16">{{member.description}}</p>
           </div>
         </div>
-      </div>
-    </app-white-section>
+      </app-white-section>
+    </div>
   </div>
 </article>

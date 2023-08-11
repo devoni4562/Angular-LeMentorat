@@ -37,7 +37,7 @@
           </div>
           <div class="flex justify-center">
             <img
-              [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/img/avatar/mentors/' + mentor.avatar"
+              [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/avatar/'+mentor.job.name+ '/'+mentor.email+'/' + mentor.avatar"
               alt="{{ mentor.pseudo }}"
               class="rounded-xl"
               height="50%"

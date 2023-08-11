@@ -26,6 +26,7 @@ export class WitnessesComponent implements OnInit
     {
       this.witnesses = this.shuffle(data).slice(0, 4);
 
+      console.log(this.witnesses);
     });
   }
 
