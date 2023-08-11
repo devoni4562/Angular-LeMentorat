@@ -1,23 +1,20 @@
-<div id="formLog">
-  <form (ngSubmit)="submitForm()" [formGroup]="form">
-    <div id="emailLog">
-      <label for="username">Email :</label>
-      <input formControlName="username" id="username" type="email">
+<div class="flex justify-center items-center my-[10%]" id="formLog">
+  <form (ngSubmit)="submitForm()" [formGroup]="form"
+        class="grid grid-cols-2 rounded-xl border-2 border-[#122D4E] mt-10">
+    <div class="w-full grid grid-rows-2 gap-y-5 justify-items-end p-5">
+      <div id="emailLog">
+        <label class="me-2 text-lg font-medium" for="username">Email :</label>
+        <input class="rounded-xl min-w-[250px] text-center" formControlName="username" id="username" type="email">
+      </div>
+      <div id="passwordLog">
+        <label class="me-2 text-lg font-medium" for="password">Mot de passe :</label>
+        <input class="rounded-xl min-w-[250px] text-center" formControlName="password" id="password" type="password">
+      </div>
     </div>
-    <div id="passwordLog">
-      <label for="password">Mot de passe :</label>
-      <input formControlName="password" id="password" type="password">
-    </div>
-    <div id="btnForm">
-      <button type="submit">Se connecter</button>
+    <div
+      class=" col-start-2 place-self-center bg-[#122D4F] text-[#EEF7FF] w-2/3 h-1/2 grid justify-items-center rounded-xl"
+      id="btnForm">
+      <button class="font-medium" type="submit">Se connecter</button>
     </div>
   </form>
-
-  <div *ngIf="authService.admin">
-    <button (click)="getAdmin()">test</button>
-  </div>
-  <button (click)="getAdmin()">test</button>
-  <div *ngFor="let adm of admins">
-    <p>{{adm.firstname}}</p>
-  </div>
 </div>

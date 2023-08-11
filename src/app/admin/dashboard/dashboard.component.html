@@ -2,8 +2,8 @@
   <div class="grid justify-items-stretch gap-5">
     <h2 class="text-center text-5xl">Gestion Contenus</h2>
     <div class="grid grid-cols-3 justify-items-center">
-      <section class="border border-[#122D4E] rounded-xl">
-        <div class="border-b border-[#122D4E]">
+      <section class="border-2 border-[#122D4E] rounded-xl">
+        <div class="border-b-2 border-[#122D4E]">
           <h3 class="text-2xl text-center py-3 uppercase font-medium">membre</h3>
         </div>
         <div class="grid grid-rows-3 gap-y-2 p-5">
@@ -12,23 +12,29 @@
           <!-- <a class="underline underline-offset-4" routerLink="/admin/member/delete">retirer un membre</a> -->
         </div>
       </section>
-      <!--   <section class="grid justify-items-center"> -->
-      <!--     <h3>blog</h3> -->
-      <!--     <div class="grid grid-cols-2 gap-3"> -->
-      <!--       <section> -->
-      <!--         <h4>Categorie</h4> -->
-      <!--         <p>Ajout Catégorie</p> -->
-      <!--         <p>Modification Categorie</p> -->
-      <!--         <p>Supprimer Categorie</p> -->
-      <!--       </section> -->
-      <!--       <section> -->
-      <!--         <h4>Article</h4> -->
-      <!--         <p>Ajout article</p> -->
-      <!--         <p>Modification Article</p> -->
-      <!--         <p>Supprimer Article</p> -->
-      <!--       </section> -->
-      <!--     </div> -->
-      <!--   </section> -->
+      <section class="grid justify-items-center border-2 border-[#122D4E] rounded-xl">
+        <div class="border-b-2 border-[#122D4E] w-full">
+          <h3 class="text-2xl text-center py-3 uppercase font-medium">blog</h3>
+        </div>
+        <section>
+          <div class="border-b border-[#122D4E]">
+            <h4 class="text-xl text-center py-3 uppercase font-medium">Article</h4>
+          </div>
+          <div class="grid grid-rows-3 gap-y-2 p-5">
+            <a class="underline underline-offset-4" routerLink="/admin/article/create">Écrire un article</a>
+            <!-- <p>Modification Article</p> -->
+            <!-- <p>Supprimer Article</p> -->
+          </div>
+        </section>
+        <!-- <div class="grid grid-cols-2 gap-3"> -->
+        <!--   <section> -->
+        <!--     <h4>Categorie</h4> -->
+        <!--     <p>Ajout Catégorie</p> -->
+        <!--     <p>Modification Categorie</p> -->
+        <!--     <p>Supprimer Categorie</p> -->
+        <!--   </section> -->
+        <!-- </div> -->
+      </section>
       <!--   <section class="grid justify-items-center"> -->
       <!--     <h3>Contenus Gratuits</h3> -->
       <!--     <div class="grid grid-cols-3 gap-3"> -->

@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit
   admins: any[] = [];
   form: FormGroup;
   authService: AuthService;
+  isLargeScreen: boolean = true;
 
   constructor(private formBuilder: FormBuilder, authService: AuthService, private http: HttpClient,
               private router: Router)
