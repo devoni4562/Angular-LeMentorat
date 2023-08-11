@@ -1,1 +1,51 @@
-<p>create-member works!</p>
+<form [formGroup]="form">
+  <div>
+    <label for="firstname">Prénom :</label>
+    <input formControlName="firstname" id="firstname" type="text">
+  </div>
+
+  <div>
+    <label for="lastname">Nom :</label>
+    <input formControlName="lastname" id="lastname" type="text">
+  </div>
+
+  <div>
+    <label for="pseudo">Pseudo :</label>
+    <input formControlName="pseudo" id="pseudo" type="text">
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input formControlName="email" id="email" type="email">
+  </div>
+
+  <div>
+    <label for="jobId">Job :</label>
+    <select formControlName="jobId" id="jobId">
+      <option *ngFor="let job of jobs" [value]="job.id">{{job.name}}</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="description">Description :</label>
+    <textarea formControlName="description" id="description"></textarea>
+  </div>
+
+  <div>
+    <label for="avatar">Avatar :</label>
+    <input formControlName="avatar" id="avatar" type="file">
+  </div>
+
+
+  <div>
+    <label for="isAdministrateur">Administrateur ?</label>
+    <input (change)="togglePasswordInput($event)" id="isAdministrateur" type="checkbox">
+  </div>
+
+  <div *ngIf="isPasswordVisible">
+    <label for="password">Mot de passe</label>
+    <input formControlName="password" id="password" type="password">
+  </div>
+
+  <button (click)="submitForm()">Valider</button>
+</form>
