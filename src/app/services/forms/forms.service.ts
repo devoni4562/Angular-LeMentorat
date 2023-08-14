@@ -26,4 +26,13 @@ export class FormsService
     );
   }
 
+  getCategoryForm()
+  {
+    return this.fb.group(
+      {
+        libelle: ['', Validators.required]
+      }
+    );
+  }
+
 }

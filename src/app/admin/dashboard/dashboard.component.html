@@ -7,7 +7,7 @@
           <h3 class="text-2xl text-center py-3 uppercase font-medium">membre</h3>
         </div>
         <div class="grid grid-rows-3 gap-y-2 p-5">
-          <a class="underline underline-offset-4" routerLink="/admin/member/create">ajouter un membre</a>
+          <a class="underline underline-offset-4" routerLink="/admin/member/create">Ajouter un membre</a>
           <!-- <a class="underline underline-offset-4" routerLink="/admin/member/update">modifier un membre</a> -->
           <!-- <a class="underline underline-offset-4" routerLink="/admin/member/delete">retirer un membre</a> -->
         </div>
@@ -16,24 +16,28 @@
         <div class="border-b-2 border-[#122D4E] w-full">
           <h3 class="text-2xl text-center py-3 uppercase font-medium">blog</h3>
         </div>
-        <section>
-          <div class="border-b border-[#122D4E]">
-            <h4 class="text-xl text-center py-3 uppercase font-medium">Article</h4>
-          </div>
-          <div class="grid grid-rows-3 gap-y-2 p-5">
-            <a class="underline underline-offset-4" routerLink="/admin/article/create">Écrire un article</a>
-            <!-- <p>Modification Article</p> -->
-            <!-- <p>Supprimer Article</p> -->
-          </div>
-        </section>
-        <!-- <div class="grid grid-cols-2 gap-3"> -->
-        <!--   <section> -->
-        <!--     <h4>Categorie</h4> -->
-        <!--     <p>Ajout Catégorie</p> -->
-        <!--     <p>Modification Categorie</p> -->
-        <!--     <p>Supprimer Categorie</p> -->
-        <!--   </section> -->
-        <!-- </div> -->
+        <div class="grid grid-cols-2">
+          <section class="border-r border-[#122D4E]">
+            <div class="border-b border-[#122D4E]">
+              <h4 class="text-xl text-center py-3 uppercase font-medium">Article</h4>
+            </div>
+            <div class="grid grid-rows-3 gap-y-2 p-5">
+              <a class="underline underline-offset-4" routerLink="/admin/article/create">Écrire un article</a>
+              <!-- <p>Modification Article</p> -->
+              <!-- <p>Supprimer Article</p> -->
+            </div>
+          </section>
+          <section>
+            <div class="border-b border-[#122D4E]">
+              <h4 class="text-xl text-center py-3 uppercase font-medium">Catégorie</h4>
+            </div>
+            <div class="grid grid-rows-3 gap-y-2 p-5">
+              <a class="underline underline-offset-4" routerLink="/admin/category/create">Ajout Catégorie</a>
+              <!--     <p>Modification Categorie</p> -->
+              <!--     <p>Supprimer Categorie</p> -->
+            </div>
+          </section>
+        </div>
       </section>
       <!--   <section class="grid justify-items-center"> -->
       <!--     <h3>Contenus Gratuits</h3> -->
@@ -55,40 +59,40 @@
       <!--   </section> -->
     </div>
   </div>
-  <!-- <div class="grid justify-items-center"> -->
-  <!--   <h2>Gestion du visuel</h2> -->
-  <!--   <div class="grid grid-cols-4 justify-items-center"> -->
-  <!--     <section> -->
-  <!--       <h3>Logo</h3> -->
-  <!--       <p>Modification du logo principal</p> -->
-  <!--       <p>Modification du logo d'onglet</p> -->
-  <!--     </section> -->
-  <!--     <section> -->
-  <!--       <h3>Accueil</h3> -->
-  <!--       <p>Modification Image</p> -->
-  <!--       <p>Modification Video</p> -->
-  <!--     </section> -->
-  <!--     <section> -->
-  <!--       <h3>Qui Sommes Nous ?</h3> -->
-  <!--       <p>Modifier 'notre histoire'</p> -->
-  <!--       <p>Modifier 'notre vision'</p> -->
-  <!--     </section> -->
-  <!--     <div> -->
-  <!--       <h3>Notre Méthode</h3> -->
-  <!--       <section> -->
-  <!--         <h4>Pour Qui?</h4> -->
-  <!--         <p>Modifier text</p> -->
-  <!--         <p>Modifier 'conditions'</p> -->
-  <!--       </section> -->
-  <!--       <section> -->
-  <!--         <h4>La Méthode</h4> -->
-  <!--         <p>Modifier texte intro</p> -->
-  <!--         <p>Modifier 'le séminaire'</p> -->
-  <!--         <p>Modifier 'la communauté'</p> -->
-  <!--         <p>Modifier texte piliers</p> -->
-  <!--         <p>Modifier piliers</p> -->
-  <!--       </section> -->
-  <!--     </div> -->
-  <!--   </div> -->
-  <!-- </div> -->
+  <div class="grid justify-items-stretch gap-5">
+    <h2 class="text-center text-5xl">Gestion du visuel</h2>
+    <!--   <div class="grid grid-cols-4 justify-items-center"> -->
+    <!--     <section> -->
+    <!--       <h3>Logo</h3> -->
+    <!--       <p>Modification du logo principal</p> -->
+    <!--       <p>Modification du logo d'onglet</p> -->
+    <!--     </section> -->
+    <!--     <section> -->
+    <!--       <h3>Accueil</h3> -->
+    <!--       <p>Modification Image</p> -->
+    <!--       <p>Modification Video</p> -->
+    <!--     </section> -->
+    <!--     <section> -->
+    <!--       <h3>Qui Sommes Nous ?</h3> -->
+    <!--       <p>Modifier 'notre histoire'</p> -->
+    <!--       <p>Modifier 'notre vision'</p> -->
+    <!--     </section> -->
+    <!--     <div> -->
+    <!--       <h3>Notre Méthode</h3> -->
+    <!--       <section> -->
+    <!--         <h4>Pour Qui?</h4> -->
+    <!--         <p>Modifier text</p> -->
+    <!--         <p>Modifier 'conditions'</p> -->
+    <!--       </section> -->
+    <!--       <section> -->
+    <!--         <h4>La Méthode</h4> -->
+    <!--         <p>Modifier texte intro</p> -->
+    <!--         <p>Modifier 'le séminaire'</p> -->
+    <!--         <p>Modifier 'la communauté'</p> -->
+    <!--         <p>Modifier texte piliers</p> -->
+    <!--         <p>Modifier piliers</p> -->
+    <!--       </section> -->
+    <!--     </div> -->
+    <!--   </div> -->
+  </div>
 </div>

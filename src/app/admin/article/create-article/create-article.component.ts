@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {ArticleService} from "../../../services/article/article.service";
 import {CategoryService} from "../../../services/category/category.service";
 import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../../services/authenticator/auth.service";
+import {AdminService} from "../../../services/admin/admin.service";
+import {tap} from "rxjs";
 
 @Component({
   selector: 'app-create-article',
@@ -15,9 +16,8 @@ export class CreateArticleComponent implements OnInit
   categories: any[] = [];
   form: FormGroup;
   formParagraphs!: FormArray;
-  protected readonly document = document;
 
-  constructor(private formBuilder: FormBuilder, private articleService: ArticleService,
+  constructor(private formBuilder: FormBuilder, private adminService: AdminService,
               private categoryService: CategoryService, private authService: AuthService)
   {
 
@@ -45,17 +45,24 @@ export class CreateArticleComponent implements OnInit
 
   submitForm()
   {
-    this.articleService.createNewArticle(this.form).subscribe(
-      response =>
-      {
-        console.log('Article créé avec succès :', response);
-        this.form.reset();
-      },
-      error =>
-      {
-        console.error('Erreur lors de la création de l\'article :', error);
-      }
-    );
+    this.adminService.createNewArticle(this.form)
+      .pipe(tap(
+          response =>
+          {
+            console.log('Article créé avec succès :', response);
+          }
+        )
+      )
+      .subscribe({
+        next: () =>
+        {
+          this.form.reset();
+        },
+        error: error =>
+        {
+          console.error('Erreur lors de la création de l\'article :', error);
+        }
+      });
   }
 
   addParagraph()

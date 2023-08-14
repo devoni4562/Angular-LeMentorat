@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit
     if (this.form.valid)
     {
       const formData = this.form.value;
+      console.log(formData);
       this.authService.login(formData);
       if (this.authService.responseMessage.length > 0)
       {
@@ -51,13 +52,5 @@ export class LoginComponent implements OnInit
     }
   }
 
-  getAdmin()
-  {
-    this.http.get<any[]>('https://api-le-mentorat-fabdab54a40e.herokuapp.com/api/admin/get_all_admin').subscribe(
-      (data: any[]) =>
-      {
-        this.admins = data;
-      }
-    );
-  }
+
 }

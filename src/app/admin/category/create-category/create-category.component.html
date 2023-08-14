@@ -1,1 +1,15 @@
-<p>create-category works!</p>
+<div class="flex justify-center items-center my-[10%]">
+  <form (ngSubmit)="submitForm()" [formGroup]="form"
+        class="grid grid-rows-2 rounded-xl border-2 border-[#122D4E] mt-10">
+    <div class="px-5 py-8">
+      <label class="me-2 text-lg font-medium" for="libelle">Nom de la catégorie :</label>
+      <input class="rounded-xl min-w-[250px] text-center border border-[#122D4E]" formControlName="libelle"
+             id="libelle" type="text">
+    </div>
+    <div
+      class="w-2/3 row-start-2 place-self-center bg-[#122D4F] text-[#EEF7FF] rounded-xl"
+      id="btnForm">
+      <button class="font-medium text-center w-full p-2" type="submit">Créer la catégorie</button>
+    </div>
+  </form>
+</div>
