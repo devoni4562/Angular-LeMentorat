@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../services/authenticator/auth.service";
-import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {ScreenWidthService} from "../../services/screen-width/screen-width.service";
 
 @Component({
   selector: 'app-login',
@@ -16,10 +16,16 @@ export class LoginComponent implements OnInit
   authService: AuthService;
   isLargeScreen: boolean = true;
 
-  constructor(private formBuilder: FormBuilder, authService: AuthService, private http: HttpClient,
+  constructor(private formBuilder: FormBuilder, authService: AuthService,
+              private screenWidthService: ScreenWidthService,
               private router: Router)
   {
     this.authService = authService;
+
+    screenWidthService.isLargeScreen$.subscribe(isLargeScreen =>
+    {
+      this.isLargeScreen = isLargeScreen;
+    });
 
     this.form = this.formBuilder.group({
       username: ['', Validators.required],
@@ -41,7 +47,6 @@ export class LoginComponent implements OnInit
     if (this.form.valid)
     {
       const formData = this.form.value;
-      console.log(formData);
       this.authService.login(formData);
       if (this.authService.responseMessage.length > 0)
       {

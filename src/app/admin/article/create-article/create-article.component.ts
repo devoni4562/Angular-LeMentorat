@@ -37,6 +37,7 @@ export class CreateArticleComponent implements OnInit
   {
     this.categoryService.getAllCategories().subscribe((categories) =>
     {
+      console.log(categories);
       this.categories = categories;
     });
 
@@ -78,5 +79,10 @@ export class CreateArticleComponent implements OnInit
     this.formParagraphs.push(newParagraph);
     console.log(this.formParagraphs);
     console.log(this.form);
+  }
+
+  removeParagraph()
+  {
+    this.formParagraphs.removeAt(this.formParagraphs.length - 1);
   }
 }

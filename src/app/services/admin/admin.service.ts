@@ -9,7 +9,7 @@ export class AdminService
 {
 
   apiUrl = 'https://api-le-mentorat-fabdab54a40e.herokuapp.com/api/admin/';
-  
+
   constructor(private http: HttpClient)
   {
   }

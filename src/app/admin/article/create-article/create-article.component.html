@@ -1,72 +1,110 @@
-<div>
-  <form (ngSubmit)="submitForm()" [formGroup]="form">
+<div class="flex justify-center items-center my-[10%]">
+  <form (ngSubmit)="submitForm()" [formGroup]="form"
+        class="flex flex-col rounded-xl border-2 border-[#122D4E] mt-10 min-w-[50%]">
     <!-- article -->
-    <h3>Information sur l'article :</h3>
-    <div id="title">
-      <label for="titleForm">Titre :</label>
-      <input formControlName="title" id="titleForm" type="text">
-    </div>
-
-    <div id="articleImg">
-      <label for="imgForm">Image :</label>
-      <input formControlName="image" id="imgForm" type="file">
-    </div>
-
-    <div id="category">
-      <label for="categoryForm">Categorie :</label>
-      <select formControlName="category" id="categoryForm">
-        <option *ngFor="let category of categories" [value]="category.id">{{category.wording}}</option>
-      </select>
-    </div>
-
-    <div id="articleVideo">
-      <label for="videoForm">Url Video :</label>
-      <input formControlName="video" id="videoForm" type="text">
-    </div>
-
-    <div>
-      <label for="summary">Résumé :</label>
-      <textarea formControlName="summary" id="summary" required></textarea>
-    </div>
-
-    <!-- Paragraph -->
-    <h3>Paragraphe :</h3>
-    <div formArrayName="paragraphs">
-      <div *ngFor="let paragraph of formParagraphs.controls; let i = index" class="mb-5">
-        <div [formGroupName]="i">
-          <h4>Paragraphe {{i + 1}}:</h4>
-          <div>
-            <label for="paragraphTitle{{i}}">Titre :</label>
-            <input formControlName="paragraphTitle" id="paragrapheTitle{{i}}" required type="text">
+    <div class="flex-col flex content-between">
+      <div class="flex flex-col border-b-2 border-[#122D4E] w-full">
+        <div class="border-b border-[#122D4E] w-full p-5">
+          <h3 class="text-center font-medium text-lg">Information sur l'article :</h3>
+        </div>
+        <div class="flex flex-col p-5 gap-y-5 w-full">
+          <div class="grid grid-rows-2 w-full justify-items-center" id="title">
+            <label class="mb-2 underline underline-offset-2 font-medium" for="titleForm">Titre :</label>
+            <input class="w-full" formControlName="title" id="titleForm" type="text">
           </div>
 
-          <div>
-            <label for="paragraphImg{{i}}">Image :</label>
-            <input formControlName="paragraphImage" id="paragraphImg{{i}}" type="file">
+          <div class="grid w-full justify-items-center" id="articleImg">
+            <label class="mb-2 underline underline-offset-2 font-medium" for="imgForm">Image :</label>
+            <input class="w-full" formControlName="image" id="imgForm" type="file">
           </div>
 
-          <div>
-            <label for="paragraphText{{i}}">Texte :</label>
-            <textarea formControlName="paragraphText" id="paragraphText{{i}}" required></textarea>
+          <div class="grid grid-rows-2 w-full justify-items-center" id="category">
+            <label class="mb-2 underline underline-offset-2 font-medium" for="categoryForm">Categorie :</label>
+            <select class="w-full text-center" formControlName="category" id="categoryForm">
+              <option disabled value="">--Choix de la catégorie--</option>
+              <option *ngFor="let category of categories" [value]="category.id"
+              >{{category.libelle}}</option>
+            </select>
           </div>
 
-          <div>
-            <label for="paragraphLink{{i}}">Lien :</label>
-            <input formControlName="paragraphLink" id="paragraphLink{{i}}" type="text">
+          <div class="grid grid-rows-2 w-full justify-items-center" id="articleVideo">
+            <label class="mb-2 underline underline-offset-2 font-medium" for="videoForm">Url Video :</label>
+            <input class="w-full" formControlName="video" id="videoForm" type="text">
           </div>
-          <div *ngIf="paragraph.get('paragraphLink')?.dirty && paragraph.get('paragraphLink')?.value !== ''">
-            <label for="paragraphLinkText{{i}}">Phrase d'accroche du lien :</label>
-            <input formControlName="paragraphLinkText" id="paragraphLinkText{{i}}" type="text">
+
+          <div class="flex flex-col w-full justify-center">
+            <label class="mb-2 underline underline-offset-2 text-center" for="summary">Résumé :</label>
+            <textarea class="w-full min-h-[200px]" formControlName="summary" id="summary" required></textarea>
           </div>
         </div>
       </div>
-    </div>
-    <div>
-      <button (click)="addParagraph()" type="button">Ajouter un paragraphe</button>
-    </div>
 
-    <div>
-      <button type="submit">valider</button>
+      <!-- Paragraph -->
+      <div class="grid-rows-2">
+        <div class="border-b border-[#122D4E] w-full p-5">
+          <h3 class="text-center font-medium text-lg">Paragraphes :</h3>
+        </div>
+        <div class="flex flex-col gap-y-5">
+          <div formArrayName="paragraphs">
+            <div *ngFor="let paragraph of formParagraphs.controls; let i = index" class="p-5">
+              <div [formGroupName]="i" class="flex-col flex gap-y-5">
+                <div>
+                  <h4 class="underline underline-offset-4 text-lg">Paragraphe {{i + 1}}:</h4>
+                </div>
+                <div class="grid grid-rows-2 w-full justify-items-center">
+                  <label class="mb-2 underline underline-offset-2 font-medium" for="paragraphTitle{{i}}">Titre :</label>
+                  <input class="w-full" formControlName="paragraphTitle" id="paragrapheTitle{{i}}" required type="text">
+                </div>
+
+                <div class="grid grid-rows-2 w-full justify-items-center">
+                  <label class="mb-2 underline underline-offset-2 font-medium" for="paragraphImg{{i}}">Image :</label>
+                  <input class="w-full" formControlName="paragraphImage" id="paragraphImg{{i}}" type="file">
+                </div>
+
+                <div class="flex flex-col w-full justify-items-center">
+                  <label class="mb-2 underline underline-offset-2 font-medium text-center" for="paragraphText{{i}}">Texte
+                                                                                                                    :</label>
+                  <textarea class="w-full min-h-[200px]" formControlName="paragraphText" id="paragraphText{{i}}"
+                            required></textarea>
+                </div>
+
+                <div class="grid grid-rows-2 w-full justify-items-center">
+                  <label class="mb-2 underline underline-offset-2 font-medium" for="paragraphLink{{i}}">Lien :</label>
+                  <input class="w-full" formControlName="paragraphLink" id="paragraphLink{{i}}" type="text">
+                </div>
+                <div *ngIf="paragraph.get('paragraphLink')?.dirty && paragraph.get('paragraphLink')?.value !== ''"
+                     class="grid grid-rows-2 w-full justify-items-center">
+                  <label class="mb-2 underline underline-offset-2 font-medium" for="paragraphLinkText{{i}}">Phrase
+                                                                                                            d'accroche
+                                                                                                            du
+                                                                                                            lien
+                                                                                                            :</label>
+                  <input class="w-full" formControlName="paragraphLinkText" id="paragraphLinkText{{i}}" type="text">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="grid grid-cols-2 gap-5">
+      <div
+        class="place-self-center bg-[#122D4F] text-[#EEF7FF] grid justify-items-center rounded-xl mt-8"
+      >
+        <button (click)="addParagraph()" class="px-5 py-2" type="button">Ajouter un paragraphe</button>
+      </div>
+      <div
+        class="place-self-center bg-[#122D4F] text-[#EEF7FF] grid justify-items-center rounded-xl mt-8"
+      >
+        <button (click)="removeParagraph()" class="px-5 py-2" type="button">Enlever un paragraphe</button>
+      </div>
+    </div>
+    <!-- Button -->
+    <div
+      class="place-self-center bg-[#122D4F] text-[#EEF7FF] grid justify-items-center rounded-xl w-1/3 my-8"
+    >
+      <button class="px-5 py-2" type="submit">valider</button>
     </div>
   </form>
 </div>
