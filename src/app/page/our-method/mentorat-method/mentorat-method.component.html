@@ -64,8 +64,10 @@
                                              mois.</p>
     </div>
 
-    <div class="grid grid-cols-4 justify-items-center">
-      <div class="max-w-[317px]">
+    <div
+      [ngClass]="{'grid grid-cols-4 justify-items-center': isLargeScreen, 'flex flex-col gap-y-5 justify-center': !isLargeScreen}"
+    >
+      <div [ngClass]="{'w-3/4':isLargeScreen, 'w-2/3 self-center': !isLargeScreen}">
         <app-white-section>
           <section class="grid grid-cols-1 text-justify gap-y-5">
             <h4 class="text-center underline-offset-2 font-semibold underline">
@@ -77,36 +79,42 @@
           </section>
         </app-white-section>
       </div>
-      <app-white-section>
-        <section class="grid grid-cols-1 text-justify gap-y-5 ">
-          <h4 class="text-center underline-offset-2 font-semibold underline">
-            Stabilisation
-          </h4>
-          <div>
-            <p>Dans cette phase on met l’accent sur : </p>
-          </div>
-        </section>
-      </app-white-section>
-      <app-white-section>
-        <section class="grid grid-cols-1 text-justify gap-y-5">
-          <h4 class="text-center underline-offset-2 font-semibold underline">
-            Montée en volume
-          </h4>
-          <div>
-            <p>Dans cette phase on met l’accent sur : </p>
-          </div>
-        </section>
-      </app-white-section>
-      <app-white-section>
-        <section class="grid grid-cols-1 text-justify gap-y-5">
-          <h4 class="text-center underline-offset-2 font-semibold underline">
-            Scaling
-          </h4>
-          <div>
-            <p>Dans cette phase on met l’accent sur : </p>
-          </div>
-        </section>
-      </app-white-section>
+      <div [ngClass]="{'w-3/4':isLargeScreen, 'w-2/3 self-center': !isLargeScreen}">
+        <app-white-section>
+          <section class="grid grid-cols-1 text-justify gap-y-5 ">
+            <h4 class="text-center underline-offset-2 font-semibold underline">
+              Stabilisation
+            </h4>
+            <div>
+              <p>Dans cette phase on met l’accent sur : </p>
+            </div>
+          </section>
+        </app-white-section>
+      </div>
+      <div [ngClass]="{'w-3/4':isLargeScreen, 'w-2/3 self-center': !isLargeScreen}">
+        <app-white-section>
+          <section class="grid grid-cols-1 text-justify gap-y-5">
+            <h4 class="text-center underline-offset-2 font-semibold underline">
+              Montée en volume
+            </h4>
+            <div>
+              <p>Dans cette phase on met l’accent sur : </p>
+            </div>
+          </section>
+        </app-white-section>
+      </div>
+      <div [ngClass]="{'w-3/4':isLargeScreen, 'w-2/3 self-center': !isLargeScreen}">
+        <app-white-section>
+          <section class="grid grid-cols-1 text-justify gap-y-5">
+            <h4 class="text-center underline-offset-2 font-semibold underline">
+              Scaling
+            </h4>
+            <div>
+              <p>Dans cette phase on met l’accent sur : </p>
+            </div>
+          </section>
+        </app-white-section>
+      </div>
     </div>
   </article>
 
