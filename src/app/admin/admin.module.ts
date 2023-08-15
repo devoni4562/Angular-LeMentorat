@@ -14,6 +14,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateCategoryComponent } from './category/create-category/create-category.component';
 import { UpdateCategoryComponent } from './category/update-category/update-category.component';
 import { DeleteCategoryComponent } from './category/delete-category/delete-category.component';
+import { CreateCaseComponent } from './case-study/create-case/create-case.component';
+import { UpdateCaseComponent } from './case-study/update-case/update-case.component';
+import { DeleteCaseComponent } from './case-study/delete-case/delete-case.component';
 
 
 @NgModule({
@@ -29,6 +32,9 @@ import { DeleteCategoryComponent } from './category/delete-category/delete-categ
         CreateCategoryComponent,
         UpdateCategoryComponent,
         DeleteCategoryComponent,
+        CreateCaseComponent,
+        UpdateCaseComponent,
+        DeleteCaseComponent,
     ],
     imports: [
         CommonModule,
