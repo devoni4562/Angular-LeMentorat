@@ -85,4 +85,13 @@ export class CreateArticleComponent implements OnInit
   {
     this.formParagraphs.removeAt(this.formParagraphs.length - 1);
   }
+
+  removeParagraphConfirmation()
+  {
+    const confirmation = window.confirm('Êtes-vous sûr de vouloir enlever ce paragraphe ?');
+    if (confirmation)
+    {
+      this.formParagraphs.removeAt(this.formParagraphs.length - 1);
+    }
+  }
 }
