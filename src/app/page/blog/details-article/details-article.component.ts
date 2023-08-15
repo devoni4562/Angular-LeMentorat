@@ -14,7 +14,7 @@ export class DetailsArticleComponent implements OnInit
   articleId!: number;
   article: any;
   isLargeScreen: boolean = true;
-  protected readonly scrollTo = scrollTo;
+  showWhiteSection: boolean = false;
 
   constructor(private articleService: ArticleService,
               private viewportScroller: ViewportScroller,
@@ -28,14 +28,20 @@ export class DetailsArticleComponent implements OnInit
     this.articleId = this.articleService.getSelectedArticle();
     this.articleService.getArticleById(this.articleId).subscribe((data: any[]) =>
     {
-      console.log(data);
       this.article = data;
+      console.log(this.article);
+      if (this.article.video !== null && !this.article.video.includes('null'))
+      {
+        this.showWhiteSection = true;
+      }
+      console.log(this.showWhiteSection);
     });
 
     this.screenWidthService.isLargeScreen$.subscribe(isLargeScreen =>
     {
       this.isLargeScreen = isLargeScreen;
     });
+
   }
 
   scrollToAnchor(anchor: string)
