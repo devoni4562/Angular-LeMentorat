@@ -22,9 +22,10 @@
   <!-- createur -->
   <div class="mt-4 text-center">
     <div class="flex justify-center">
-      <img [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/img/avatar/admin/' + article.writer.avatar"
-           alt="avatar"
-           class=" w-12 rounded-full">
+      <img
+        [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/avatar/'+article.writer.job.name+'/'+article.writer.email+'/'+ article.writer.avatar"
+        alt="avatar"
+        class=" w-12 rounded-full">
     </div>
     <p>Par {{article.writer.pseudo}}</p>
     <p>Le {{article.date | date: 'dd-MM-yyyy'}}</p>
