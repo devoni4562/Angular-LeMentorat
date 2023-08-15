@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {ScreenWidthService} from "../../../services/screen-width/screen-width.service";
 
 @Component({
   selector: 'app-who-that-for',
@@ -14,5 +15,15 @@ export class WhoThatForComponent
     ['veulent gagner en liberté', 'Veulent faire plus de ventes'],
     ['ont besoin de se sentir guidés et soutenus dans le développement de leur activité', 'veulent apporter leur contribution au monde à leur manière'],
     ['Souhaitent une méthode qui a fait ses preuves, à appliquer étape par étape']];
+
+  isLargeScreen: boolean = true;
+
+  constructor(private screenWidthService: ScreenWidthService)
+  {
+    screenWidthService.isLargeScreen$.subscribe(isLargeScreen =>
+    {
+      this.isLargeScreen = isLargeScreen;
+    });
+  }
 
 }

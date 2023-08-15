@@ -8,7 +8,8 @@
 </app-white-section>
 
 <div class="grid grid-cols-1 justify-items-center text-sm sm:text-xl gap-y-14 text-[#EEF7FF] my-5">
-  <div *ngFor="let states of statesOfMind" class="w-3/4 sm:w-2/3 grid grid-cols-2 justify-items-center gap-x-10">
+  <div *ngFor="let states of statesOfMind" [ngClass]="{'grid-cols-2':isLargeScreen, 'grid-rows-2': !isLargeScreen}"
+       class="w-3/4 sm:w-2/3 grid justify-items-center gap-x-10">
     <div class="bg-[#122D4E] p-3 rounded-xl text-center w-full">
       <p>{{states[0]}}</p>
     </div>
