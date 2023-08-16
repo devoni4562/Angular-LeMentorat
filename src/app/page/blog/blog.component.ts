@@ -150,6 +150,7 @@ export class BlogComponent implements OnInit
       }
     };
     filterArticlesByWriter();
+
   }
 
   private getElementValue(id: string): string | null
@@ -157,4 +158,5 @@ export class BlogComponent implements OnInit
     const element = document.querySelector(`#${id}`) as HTMLInputElement;
     return element ? element.value : null;
   }
+
 }

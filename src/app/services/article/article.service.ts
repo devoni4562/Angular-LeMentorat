@@ -9,6 +9,7 @@ export class ArticleService
 {
 
   private apiUrl = 'https://api-le-mentorat-fabdab54a40e.herokuapp.com/api/article/';
+  private apiUrllh = 'https://localhost:8000/api/article/';
   private selectedArticleId!: number;
 
   constructor(private http: HttpClient)
