@@ -22,26 +22,31 @@ export class DeleteArticleComponent
 
   deleteArticle(id: number)
   {
-    this.adminService.deleteArticle(id).pipe(tap(
-      response =>
-      {
-        const indexToRemove = this.articles.findIndex(item => item.id === id);
+    const confirmation = window.confirm('Êtes-vous sûr de vouloir supprimer cette catégorie ?');
 
-        if (indexToRemove !== -1)
+    if (confirmation)
+    {
+      this.adminService.deleteArticle(id).pipe(tap(
+        response =>
         {
-          this.articles.splice(indexToRemove, 1);
-        }
-      }
-    ))
-      .subscribe(
-        {
-          error: error =>
+          const indexToRemove = this.articles.findIndex(item => item.id === id);
+
+          if (indexToRemove !== -1)
           {
-            console.error(error);
+            this.articles.splice(indexToRemove, 1);
           }
         }
-      );
+      ))
+        .subscribe(
+          {
+            error: error =>
+            {
+              console.error(error);
+            }
+          }
+        );
 
+    }
   }
 
 }

@@ -50,8 +50,8 @@ export class AdminService
       if (controlName !== 'image' && controlName !== 'paragraphs')
       {
         const control = form.controls[controlName];
-        const valueTesting = control.value.toString();
-        if (!valueTesting.trim())
+        const valueTesting = control.value?.toString();
+        if (!valueTesting || !valueTesting.trim())
         {
           control.setValue(null);
         }
@@ -104,5 +104,9 @@ export class AdminService
     return this.http.post<any>(this.apiUrl + 'category/new', formData);
   }
 
+  deleteCategory(id: number)
+  {
+    return this.http.delete(this.apiUrl + 'category/delete/' + id);
+  }
 
 }
