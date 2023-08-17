@@ -88,7 +88,12 @@ export class AdminService
         formData.append('paragraphs', JSON.stringify(paragraphsData));
       }
     }
-    return this.http.post<any>(this.apiUrlLh + 'article/new', formData);
+    return this.http.post<any>(this.apiUrl + 'article/new', formData);
+  }
+
+  deleteArticle(id: number)
+  {
+    return this.http.delete(this.apiUrlLh + 'article/delete/' + id);
   }
 
   //------------------------ CATEGORY ------------------------------//
