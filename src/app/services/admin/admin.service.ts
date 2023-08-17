@@ -9,6 +9,7 @@ export class AdminService
 {
 
   apiUrl = 'https://api-le-mentorat-fabdab54a40e.herokuapp.com/api/admin/';
+  apiUrlLh = 'https://localhost:8000/api/admin/';
 
   constructor(private http: HttpClient)
   {
@@ -40,47 +41,54 @@ export class AdminService
 
   //------------------------ ARTICLE ------------------------------//
 
-  createNewArticle(form: any)
+  createNewArticle(form: FormGroup)
   {
-    const articleFormData: FormData = new FormData();
+    const formData: FormData = new FormData();
 
-    articleFormData.append('category', form.get('category').value);
-    articleFormData.append('writterId', form.get('writterId').value);
-    articleFormData.append('title', form.get('title').value);
-    articleFormData.append('video', form.get('video').value);
-    articleFormData.append('summary', form.get('summary').value);
-
-    const imageinput = document.getElementById('imgForm') as HTMLInputElement;
-    const imageFile = imageinput?.files?.[0];
-    if (imageFile)
+    for (const controlName in form.controls)
     {
-      articleFormData.append('image', imageFile, imageFile.name);
-    }
-
-    const paragraphsArray = form.get('paragraphs') as FormArray;
-    const paragraphsData = paragraphsArray.controls.map((paragraphControl, index) =>
-    {
-      const paragraphImageInput = document.getElementById('paragraphImg' + index) as HTMLInputElement;
-      const paragraphImageFile = paragraphImageInput?.files?.[0];
-
-      const paragraphData = {
-        paragraphTitle: paragraphControl.get('paragraphTitle')?.value,
-        paragraphText: paragraphControl.get('paragraphText')?.value,
-        paragraphLink: paragraphControl.get('paragraphLink')?.value,
-        paragraphLinkText: paragraphControl.get('paragraphLinkText')?.value,
-      };
-
-      if (paragraphImageFile)
+      if (controlName !== 'image' && controlName !== 'paragraphs')
       {
-        articleFormData.append('imageParagraph' + index, paragraphImageFile, paragraphImageFile.name);
+        const control = form.controls[controlName];
+        const valueTesting = control.value.toString();
+        if (!valueTesting.trim())
+        {
+          control.setValue(null);
+        }
+        formData.append(controlName, control.value);
+      } else if (controlName === 'image')
+      {
+        const imageinput = document.getElementById('imgForm') as HTMLInputElement;
+        const imageFile = imageinput?.files?.[0];
+        if (imageFile)
+        {
+          formData.append('image', imageFile, imageFile.name);
+        }
+      } else if (controlName === 'paragraphs')
+      {
+        const paragraphsArray = form.get('paragraphs') as FormArray;
+        const paragraphsData = paragraphsArray.controls.map((paragraphControl, index) =>
+        {
+          const paragraphImageInput = document.getElementById('paragraphImg' + index) as HTMLInputElement;
+          const paragraphImageFile = paragraphImageInput?.files?.[0];
+
+          const paragraphData = {
+            paragraphTitle: paragraphControl.get('paragraphTitle')?.value,
+            paragraphText: paragraphControl.get('paragraphText')?.value,
+            paragraphLink: paragraphControl.get('paragraphLink')?.value,
+            paragraphLinkText: paragraphControl.get('paragraphLinkText')?.value,
+          };
+
+          if (paragraphImageFile)
+          {
+            formData.append('imageParagraph' + index, paragraphImageFile, paragraphImageFile.name);
+          }
+          return paragraphData;
+        });
+        formData.append('paragraphs', JSON.stringify(paragraphsData));
       }
-
-      return paragraphData;
-    });
-
-    articleFormData.append('paragraphs', JSON.stringify(paragraphsData));
-
-    return this.http.post<any>(this.apiUrl + 'article/new', articleFormData);
+    }
+    return this.http.post<any>(this.apiUrlLh + 'article/new', formData);
   }
 
   //------------------------ CATEGORY ------------------------------//

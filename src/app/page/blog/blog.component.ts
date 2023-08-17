@@ -51,13 +51,13 @@ export class BlogComponent implements OnInit
 
   getDistinctCategories(articles: any[]): string[]
   {
-    const categories = articles.map(article => article.category?.wording);
+    const categories = articles.map(article => article.category?.libelle);
     return Array.from(new Set(categories.filter(Boolean)));
   }
 
   getDistinctWriters(articles: any[]): string[]
   {
-    const writer = articles.map(article => article.writer?.pseudo);
+    const writer = articles.map(article => article.writer[0]?.pseudo);
     return Array.from(new Set(writer.filter((Boolean))));
   }
 
@@ -67,7 +67,7 @@ export class BlogComponent implements OnInit
     const filterArticlesByWriter = () =>
     {
       this.filteredArticles = this.articles.filter(article =>
-        !this.selectedWriter || article.writer.pseudo.includes(this.selectedWriter)
+        !this.selectedWriter || article.writer[0].pseudo.includes(this.selectedWriter)
       );
       filterArticlesByCategory();
     };
@@ -79,7 +79,7 @@ export class BlogComponent implements OnInit
         .map(checkbox => checkbox.nativeElement.value);
 
       this.filteredArticles = this.filteredArticles.filter(article =>
-        checkedCategories.length === 0 || checkedCategories.includes(article.category?.wording)
+        checkedCategories.length === 0 || checkedCategories.includes(article.category?.libelle)
       );
       filterArticlesByName();
     };
