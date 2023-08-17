@@ -35,7 +35,7 @@ export class ArticleService
 
   getIdAndTitleOfAllArticles()
   {
-    return this.http.get<any[]>(this.apiUrllh + 'IdAndTitle');
+    return this.http.get<any[]>(this.apiUrl + 'IdAndTitle');
   }
 
   getArticleById(id: number)

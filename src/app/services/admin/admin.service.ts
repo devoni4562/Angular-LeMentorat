@@ -93,7 +93,7 @@ export class AdminService
 
   deleteArticle(id: number)
   {
-    return this.http.delete(this.apiUrlLh + 'article/delete/' + id);
+    return this.http.delete(this.apiUrl + 'article/delete/' + id);
   }
 
   //------------------------ CATEGORY ------------------------------//
