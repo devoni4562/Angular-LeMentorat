@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {AdminService} from "../../../services/admin/admin.service";
 import {ArticleService} from "../../../services/article/article.service";
+import {tap} from "rxjs";
 
 @Component({
   selector: 'app-delete-article',
@@ -21,12 +22,26 @@ export class DeleteArticleComponent
 
   deleteArticle(id: number)
   {
-    this.adminService.deleteArticle(id).subscribe(
+    this.adminService.deleteArticle(id).pipe(tap(
       response =>
       {
-        console.log(response);
+        const indexToRemove = this.articles.findIndex(item => item.id === id);
+
+        if (indexToRemove !== -1)
+        {
+          this.articles.splice(indexToRemove, 1);
+        }
       }
-    );
+    ))
+      .subscribe(
+        {
+          error: error =>
+          {
+            console.error(error);
+          }
+        }
+      );
+
   }
 
 }
