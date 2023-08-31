@@ -8,6 +8,7 @@ export class CaseStudyService
 {
 
   apiURL = 'https://api-le-mentorat-fabdab54a40e.herokuapp.com/api/case_study/';
+  apiURLLh = 'https://localhost:8000/api/case_study/';
 
   constructor(private http: HttpClient)
   {

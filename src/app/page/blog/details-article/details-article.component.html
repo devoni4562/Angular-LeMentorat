@@ -35,6 +35,9 @@
     <div *ngIf="showWhiteSection ? (i%2 === 0) : (i%2 !== 0)" class="w-2/3 p-5 grid grid-cols-1 gap-y-5">
       <h3 class="underline underline-offset-4 font-semibold text-xl" id="{{paragraph.title}}">{{paragraph.title}}</h3>
       <p class="text-justify">{{paragraph.text}}</p>
+      <img *ngIf="paragraph.image"
+           [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/articles/'+article.title.replaceAll(' ', '_')+'/paragraphs/'+paragraph.image"
+           alt="Image Paragraphe {{i}}"/>
       <div *ngIf="paragraph.link" class="grid grid-cols-1 gap-y-1">
         <p *ngIf="paragraph.linkText">{{paragraph.linkText}}</p>
         <div [ngClass]="{'ms-5': isLargeScreen}" class="ms-5 flex">
@@ -47,9 +50,6 @@
              target="_blank">{{paragraph.link}}</a>
         </div>
       </div>
-      <img *ngIf="paragraph.image"
-           [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/articles/'+article.title.replaceAll(' ', '_')+'/paragraphs/'+paragraph.image"
-           alt="Image Paragraphe {{i}}"/>
     </div>
     <div *ngIf="showWhiteSection ? (i%2 !== 0) : (i%2 === 0)" class="w-full">
       <app-white-section>
@@ -58,6 +58,9 @@
             <h3 class="underline underline-offset-4 font-semibold text-xl"
                 id="{{paragraph.title}}">{{paragraph.title}}</h3>
             <p class="text-justify">{{paragraph.text}}</p>
+            <img *ngIf="paragraph.image"
+                 [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/articles/'+article.title.replaceAll(' ', '_')+'/paragraphs/'+paragraph.image"
+                 alt="Image Paragraphe"/>
             <div *ngIf="paragraph.link" class="grid grid-cols-1 gap-y-1">
               <p *ngIf="paragraph.linkText">{{paragraph.linkText}}</p>
               <div [ngClass]="{'ms-5': isLargeScreen}" class="ms-5 flex">
@@ -70,9 +73,6 @@
                    target="_blank">{{paragraph.link}}</a>
               </div>
             </div>
-            <img *ngIf="paragraph.image"
-                 [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/articles/'+article.title.replaceAll(' ', '_')+'/paragraphs/'+paragraph.image"
-                 alt="Image Paragraphe"/>
           </div>
         </div>
       </app-white-section>
