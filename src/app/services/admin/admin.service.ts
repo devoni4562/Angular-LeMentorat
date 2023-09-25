@@ -109,4 +109,12 @@ export class AdminService
     return this.http.delete(this.apiUrl + 'category/delete/' + id);
   }
 
+  //----------------------- CASE STUDY ------------------------------//
+  newCaseStudy(formData: any)
+  {
+    console.log(formData);
+
+    return this.http.post<any>(this.apiUrl + 'case_study/new', formData);
+  }
+
 }

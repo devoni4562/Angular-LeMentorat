@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit
     this.authService.loginSucces.subscribe(() =>
     {
       this.form.reset();
-      this.router.navigate(['/']);
+      this.router.navigate(['/admin/dashboard']);
     });
   }
 

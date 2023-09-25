@@ -35,4 +35,14 @@ export class FormsService
     );
   }
 
+  getCaseStudyForm()
+  {
+    return this.fb.group(
+      {
+        link: ['', Validators.required],
+        title: ['', Validators.required],
+      }
+    );
+  }
+
 }
