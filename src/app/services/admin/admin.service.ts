@@ -39,6 +39,11 @@ export class AdminService
     return this.http.post<any>(this.apiUrl + 'member/new', formData);
   }
 
+  deleteMember(id: number)
+  {
+    return this.http.delete(this.apiUrl + 'member/delete/' + id);
+  }
+
   //------------------------ ARTICLE ------------------------------//
 
   createNewArticle(form: FormGroup)
