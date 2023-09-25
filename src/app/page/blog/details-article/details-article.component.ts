@@ -29,12 +29,10 @@ export class DetailsArticleComponent implements OnInit
     this.articleService.getArticleById(this.articleId).subscribe((data: any[]) =>
     {
       this.article = data;
-      console.log(this.article);
       if (this.article.video !== null && !this.article.video.includes('null'))
       {
         this.showWhiteSection = true;
       }
-      console.log(this.showWhiteSection);
     });
 
     this.screenWidthService.isLargeScreen$.subscribe(isLargeScreen =>

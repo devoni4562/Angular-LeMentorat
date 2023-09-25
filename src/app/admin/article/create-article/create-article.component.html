@@ -1,4 +1,4 @@
-<div class="flex justify-center items-center my-[10%]">
+<div class="flex justify-center items-center mb-5">
   <form (ngSubmit)="submitForm()" [formGroup]="form"
         class="flex flex-col rounded-xl border-2 border-[#122D4E] mt-10 min-w-[50%]">
     <!-- article -->
@@ -10,17 +10,20 @@
         <div class="flex flex-col p-5 gap-y-5 w-full">
           <div class="grid grid-rows-2 w-full justify-items-center" id="title">
             <label class="mb-2 underline underline-offset-2 font-medium" for="titleForm">Titre :</label>
-            <input class="w-full" formControlName="title" id="titleForm" type="text">
+            <input class="rounded-xl min-w-full text-center border border-[#122D4E]" formControlName="title"
+                   id="titleForm" type="text">
           </div>
 
           <div class="grid w-full justify-items-center" id="articleImg">
             <label class="mb-2 underline underline-offset-2 font-medium" for="imgForm">Image :</label>
-            <input class="w-full" formControlName="image" id="imgForm" type="file">
+            <input class="rounded-xl min-w-full text-center border border-[#122D4E]" formControlName="image"
+                   id="imgForm" type="file">
           </div>
 
           <div class="grid grid-rows-2 w-full justify-items-center" id="category">
             <label class="mb-2 underline underline-offset-2 font-medium" for="categoryForm">Categorie :</label>
-            <select class="w-full text-center" formControlName="category" id="categoryForm">
+            <select class="w-full text-center rounded-xl min-w-full border border-[#122D4E]"
+                    formControlName="category" id="categoryForm">
               <option disabled value="">--Choix de la catégorie--</option>
               <option *ngFor="let category of categories" [value]="category.id"
               >{{category.libelle}}</option>
@@ -29,12 +32,14 @@
 
           <div class="grid grid-rows-2 w-full justify-items-center" id="articleVideo">
             <label class="mb-2 underline underline-offset-2 font-medium" for="videoForm">Url Video :</label>
-            <input class="w-full" formControlName="video" id="videoForm" type="text">
+            <input class="rounded-xl min-w-full text-center border border-[#122D4E]" formControlName="video"
+                   id="videoForm" type="text">
           </div>
 
           <div class="flex flex-col w-full justify-center">
             <label class="mb-2 underline underline-offset-2 text-center" for="summary">Résumé :</label>
-            <textarea class="w-full min-h-[200px]" formControlName="summary" id="summary" required></textarea>
+            <textarea class="w-full min-h-[200px] rounded-xl min-w-full text-center border border-[#122D4E]"
+                      formControlName="summary" id="summary" required></textarea>
           </div>
         </div>
       </div>
@@ -53,12 +58,14 @@
                 </div>
                 <div class="grid grid-rows-2 w-full justify-items-center">
                   <label class="mb-2 underline underline-offset-2 font-medium" for="paragraphTitle{{i}}">Titre :</label>
-                  <input class="w-full" formControlName="paragraphTitle" id="paragrapheTitle{{i}}" required type="text">
+                  <input class="rounded-xl min-w-full text-center border border-[#122D4E]"
+                         formControlName="paragraphTitle" id="paragrapheTitle{{i}}" required type="text">
                 </div>
 
                 <div class="grid grid-rows-2 w-full justify-items-center">
                   <label class="mb-2 underline underline-offset-2 font-medium" for="paragraphImg{{i}}">Image :</label>
-                  <input class="w-full" formControlName="paragraphImage" id="paragraphImg{{i}}" type="file">
+                  <input class="rounded-xl min-w-full text-center border border-[#122D4E]"
+                         formControlName="paragraphImage" id="paragraphImg{{i}}" type="file">
                 </div>
 
                 <div class="flex flex-col w-full justify-items-center">
@@ -70,7 +77,8 @@
 
                 <div class="grid grid-rows-2 w-full justify-items-center">
                   <label class="mb-2 underline underline-offset-2 font-medium" for="paragraphLink{{i}}">Lien :</label>
-                  <input class="w-full" formControlName="paragraphLink" id="paragraphLink{{i}}" type="text">
+                  <input class="rounded-xl min-w-full text-center border border-[#122D4E]"
+                         formControlName="paragraphLink" id="paragraphLink{{i}}" type="text">
                 </div>
                 <div *ngIf="paragraph.get('paragraphLink')?.dirty && paragraph.get('paragraphLink')?.value !== ''"
                      class="grid grid-rows-2 w-full justify-items-center">
@@ -79,7 +87,8 @@
                                                                                                             du
                                                                                                             lien
                                                                                                             :</label>
-                  <input class="w-full" formControlName="paragraphLinkText" id="paragraphLinkText{{i}}" type="text">
+                  <input class="rounded-xl min-w-full text-center border border-[#122D4E]"
+                         formControlName="paragraphLinkText" id="paragraphLinkText{{i}}" type="text">
                 </div>
               </div>
             </div>

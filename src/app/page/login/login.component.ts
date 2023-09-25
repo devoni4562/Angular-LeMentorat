@@ -11,7 +11,6 @@ import {ScreenWidthService} from "../../services/screen-width/screen-width.servi
 })
 export class LoginComponent implements OnInit
 {
-  admins: any[] = [];
   form: FormGroup;
   authService: AuthService;
   isLargeScreen: boolean = true;
