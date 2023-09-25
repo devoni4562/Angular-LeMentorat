@@ -15,6 +15,9 @@ import {DeleteCategoryComponent} from "./category/delete-category/delete-categor
 import {CreateCaseComponent} from "./case-study/create-case/create-case.component";
 import {UpdateCaseComponent} from "./case-study/update-case/update-case.component";
 import {DeleteCaseComponent} from "./case-study/delete-case/delete-case.component";
+import {CreateJobComponent} from "./job/create-job/create-job.component";
+import {UpdateJobComponent} from "./job/update-job/update-job.component";
+import {DeleteJobComponent} from "./job/delete-job/delete-job.component";
 
 const adminRoutes: Routes = [
   {
@@ -60,6 +63,15 @@ const adminRoutes: Routes = [
           {path: 'create', component: CreateCaseComponent},
           {path: 'update', component: UpdateCaseComponent},
           {path: 'delete', component: DeleteCaseComponent}
+        ]
+      },
+      {
+        path: 'job',
+        canActivateChild: [authGuard],
+        children: [
+          {path: 'create', component: CreateJobComponent},
+          {path: 'update', component: UpdateJobComponent},
+          {path: 'delete', component: DeleteJobComponent}
         ]
       }
     ]

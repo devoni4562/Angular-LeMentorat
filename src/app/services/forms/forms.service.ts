@@ -45,4 +45,13 @@ export class FormsService
     );
   }
 
+  getJobForm()
+  {
+    return this.fb.group((
+      {
+        name: ['', Validators.required]
+      }
+    ));
+  }
+
 }

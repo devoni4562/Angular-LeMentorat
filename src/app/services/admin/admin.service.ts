@@ -44,9 +44,21 @@ export class AdminService
     return this.http.delete(this.apiUrl + 'member/delete/' + id);
   }
 
-  //------------------------ ARTICLE ------------------------------//
+  //--------------------------- JOB --------------------------------//
+  newJob(formData: FormGroup)
+  {
+    return this.http.post<any>(this.apiUrl + 'job/new', formData);
+  }
 
-  createNewArticle(form: FormGroup)
+  deleteJob(id: number)
+  {
+    return this.http.delete<any>(this.apiUrl + 'job/delete/' + id);
+  }
+
+
+  //------------------------- ARTICLE ------------------------------//
+
+  newArticle(form: FormGroup)
   {
     const formData: FormData = new FormData();
 
@@ -104,8 +116,6 @@ export class AdminService
   //------------------------ CATEGORY ------------------------------//
   newCategory(formData: any)
   {
-    console.log(formData);
-
     return this.http.post<any>(this.apiUrl + 'category/new', formData);
   }
 

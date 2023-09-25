@@ -46,7 +46,7 @@ export class CreateArticleComponent implements OnInit
 
   submitForm()
   {
-    this.adminService.createNewArticle(this.form)
+    this.adminService.newArticle(this.form)
       .pipe(tap(
           response =>
           {

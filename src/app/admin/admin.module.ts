@@ -17,6 +17,9 @@ import { DeleteCategoryComponent } from './category/delete-category/delete-categ
 import { CreateCaseComponent } from './case-study/create-case/create-case.component';
 import { UpdateCaseComponent } from './case-study/update-case/update-case.component';
 import { DeleteCaseComponent } from './case-study/delete-case/delete-case.component';
+import { CreateJobComponent } from './job/create-job/create-job.component';
+import { UpdateJobComponent } from './job/update-job/update-job.component';
+import { DeleteJobComponent } from './job/delete-job/delete-job.component';
 
 
 @NgModule({
@@ -35,6 +38,9 @@ import { DeleteCaseComponent } from './case-study/delete-case/delete-case.compon
         CreateCaseComponent,
         UpdateCaseComponent,
         DeleteCaseComponent,
+        CreateJobComponent,
+        UpdateJobComponent,
+        DeleteJobComponent,
     ],
     imports: [
         CommonModule,
