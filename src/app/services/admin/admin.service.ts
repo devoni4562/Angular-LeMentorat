@@ -33,12 +33,10 @@ export class AdminService
         }
       } else if (controlName === "avatar")
       {
-        console.log(controlName);
         console.log(croppedImage);
         if (croppedImage)
         {
           const mimeType = croppedImage.type;
-          console.log(croppedImage.type);
 
           let fileExtension = '';
           if (mimeType === 'image/jpeg')
@@ -63,11 +61,7 @@ export class AdminService
         }
       }
     }
-    formData.forEach((value, key) =>
-    {
-      if (key === 'avatar')
-        console.log(key, value);
-    });
+
     const imageinput = document.getElementById('avatarFile') as HTMLInputElement;
     const imageFile = imageinput?.files?.[0];
     console.log(imageFile);

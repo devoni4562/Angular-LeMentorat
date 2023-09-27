@@ -18,6 +18,7 @@
     "@angular/platform-browser": "^16.2.6",
     "@angular/platform-browser-dynamic": "^16.2.6",
     "@angular/router": "^16.2.6",
+    "compressorjs": "^1.2.1",
     "jquery": "^3.7.0",
     "ngx-cookie-service": "^16.0.0",
     "ngx-image-cropper": "^7.0.2",
