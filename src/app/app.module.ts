@@ -37,9 +37,9 @@ import {NavbarContentComponent} from './navbar/navbar-content/navbar-content/nav
 import {MethodContentComponent} from './navbar/dropdown/method-dropdown/content/method-content.component';
 import {FreeCntContentComponent} from './navbar/dropdown/free-content-dropdown/content/free-cnt-content.component';
 import {AdminContentComponent} from './navbar/admin-content/admin-content.component';
-import { YoutubeVideoInsertComponent } from './youtube-video-insert/youtube-video-insert.component';
-import { ArticleContentComponent } from './navbar/admin-content/dropdown/article-content/article-content.component';
-import { ReseauxComponent } from './footer/reseaux/reseaux.component';
+import {YoutubeVideoInsertComponent} from './youtube-video-insert/youtube-video-insert.component';
+import {ArticleContentComponent} from './navbar/admin-content/dropdown/article-content/article-content.component';
+import {ReseauxComponent} from './footer/reseaux/reseaux.component';
 
 
 @NgModule({
@@ -87,6 +87,7 @@ import { ReseauxComponent } from './footer/reseaux/reseaux.component';
     AdminModule,
     FormsModule,
     CommonModule,
+
   ],
   providers: [
     {

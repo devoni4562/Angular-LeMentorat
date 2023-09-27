@@ -16,9 +16,10 @@ export class AdminService
   }
 
   //------------------------ MEMBER ------------------------------//
-  NewMember(form: FormGroup)
+  NewMember(form: FormGroup, croppedImage: any)
   {
     const formData: FormData = new FormData();
+    let title = '';
 
     for (const controlName in form.controls)
     {
@@ -26,17 +27,51 @@ export class AdminService
       {
         const control = form.controls[controlName];
         formData.append(controlName, control.value);
+        if (controlName === 'pseudo')
+        {
+          title = control.value;
+        }
       } else if (controlName === "avatar")
       {
-        const imageinput = document.getElementById('avatar') as HTMLInputElement;
-        const imageFile = imageinput?.files?.[0];
-        if (imageFile)
+        console.log(controlName);
+        console.log(croppedImage);
+        if (croppedImage)
         {
-          formData.append('avatar', imageFile, imageFile.name);
+          const mimeType = croppedImage.type;
+          console.log(croppedImage.type);
+
+          let fileExtension = '';
+          if (mimeType === 'image/jpeg')
+          {
+            fileExtension = 'jpg';
+          } else if (mimeType === 'image/png')
+          {
+            fileExtension = 'png';
+          } else if (mimeType === 'image/gif')
+          {
+            fileExtension = 'gif';
+          }
+
+          const fileName = `${title}.${fileExtension}`;
+
+          const imageFile = new File([croppedImage], fileName, {type: mimeType});
+
+          if (imageFile)
+          {
+            formData.append('avatar', imageFile, imageFile.name);
+          }
         }
       }
     }
-    return this.http.post<any>(this.apiUrl + 'member/new', formData);
+    formData.forEach((value, key) =>
+    {
+      if (key === 'avatar')
+        console.log(key, value);
+    });
+    const imageinput = document.getElementById('avatarFile') as HTMLInputElement;
+    const imageFile = imageinput?.files?.[0];
+    console.log(imageFile);
+    return this.http.post<any>(this.apiUrlLh + 'member/new', formData);
   }
 
   deleteMember(id: number)
