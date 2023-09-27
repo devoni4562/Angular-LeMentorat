@@ -7,7 +7,7 @@ import {HttpClient} from "@angular/common/http";
 export class JobService
 {
 
-  apiURL = 'https://api-le-mentorat-fabdab54a40e.herokuapp.com/api/role';
+  apiURL = 'https://api-le-mentorat-fabdab54a40e.herokuapp.com/api/role/';
 
   constructor(private http: HttpClient)
   {
