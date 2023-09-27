@@ -71,7 +71,7 @@ export class AdminService
     const imageinput = document.getElementById('avatarFile') as HTMLInputElement;
     const imageFile = imageinput?.files?.[0];
     console.log(imageFile);
-    return this.http.post<any>(this.apiUrlLh + 'member/new', formData);
+    return this.http.post<any>(this.apiUrl + 'member/new', formData);
   }
 
   deleteMember(id: number)
