@@ -47,11 +47,20 @@ export class FormsService
 
   getJobForm()
   {
-    return this.fb.group((
+    return this.fb.group(
       {
         name: ['', Validators.required]
       }
-    ));
+    );
+  }
+
+  getLiveConferenceForm()
+  {
+    return this.fb.group(
+      {
+        link: ['', Validators.required]
+      }
+    );
   }
 
 }

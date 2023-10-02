@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {LiveConferenceService} from "../../../services/live-conference/live-conference.service";
 
 @Component({
   selector: 'app-live-conference',
@@ -9,15 +9,14 @@ import {HttpClient} from "@angular/common/http";
 export class LiveConferenceComponent implements OnInit
 {
   link: string = '';
-  urlFile: string = 'https://api-le-mentorat-fabdab54a40e.herokuapp.com/getConferenceSubscribeLink';
 
-  constructor(private http: HttpClient)
+  constructor(private liveConferenceService: LiveConferenceService)
   {
   }
 
   ngOnInit()
   {
-    this.http.get<any>(this.urlFile).subscribe(link =>
+    this.liveConferenceService.getLink().subscribe(link =>
     {
       this.link = link;
     });

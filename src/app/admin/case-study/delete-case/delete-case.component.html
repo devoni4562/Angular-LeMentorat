@@ -1,1 +1,13 @@
-<p>delete-case works!</p>
+<div class="flex w-full justify-center mt-5">
+  <div class="w-2/3 grid grid-cols-3 gap-5 justify-self-center">
+    <div *ngFor="let case of cases"
+         class="border-2 border-[#122D4F] rounded-xl">
+      <div class="flex flex-col gap-y-5 p-3">
+        <h4 class="text-lg text-center">{{case.title}}</h4>
+        <button (click)="deleteCase(case.id)" class="text-[#EEF7FF] bg-[#122D4F] rounded-xl py-2 px-1">Supprimer
+                                                                                                       l'Étude de cas
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

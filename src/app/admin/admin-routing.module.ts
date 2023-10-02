@@ -18,6 +18,8 @@ import {DeleteCaseComponent} from "./case-study/delete-case/delete-case.componen
 import {CreateJobComponent} from "./job/create-job/create-job.component";
 import {UpdateJobComponent} from "./job/update-job/update-job.component";
 import {DeleteJobComponent} from "./job/delete-job/delete-job.component";
+import {LiveConferenceComponent} from "./live-conference/live-conference.component";
+import {BusinessCoffeeComponent} from "./business-coffee/business-coffee.component";
 
 const adminRoutes: Routes = [
   {
@@ -72,6 +74,20 @@ const adminRoutes: Routes = [
           {path: 'create', component: CreateJobComponent},
           {path: 'update', component: UpdateJobComponent},
           {path: 'delete', component: DeleteJobComponent}
+        ]
+      },
+      {
+        path: 'live-conference',
+        canActivateChild: [authGuard],
+        children: [
+          {path: 'update', component: LiveConferenceComponent},
+        ]
+      },
+      {
+        path: 'business-coffee',
+        canActivateChild: [authGuard],
+        children: [
+          {path: 'update', component: BusinessCoffeeComponent},
         ]
       }
     ]

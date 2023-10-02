@@ -156,9 +156,17 @@ export class AdminService
   //----------------------- CASE STUDY ------------------------------//
   newCaseStudy(formData: any)
   {
-    console.log(formData);
-
     return this.http.post<any>(this.apiUrl + 'case_study/new', formData);
   }
 
+  deleteCase(id: number)
+  {
+    return this.http.delete(this.apiUrl + 'case_study/delete/' + id);
+  }
+
+  //--------------------- LIVE CONFERENCE -----------------------------//
+  updateLiveConferenceLink(formData: any)
+  {
+    return this.http.post<any>(this.apiUrl + 'live-conference/update', formData);
+  }
 }

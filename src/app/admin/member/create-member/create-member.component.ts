@@ -58,9 +58,11 @@ export class CreateMemberComponent implements OnInit
     const compressionPromise = new Promise((resolve, reject) =>
     {
       new Compressor(this.croppedImage, {
-        quality: 0.9,
+        quality: 0.8,
+        convertSize: 1000000,
         success(result)
         {
+          console.log(result);
           resolve(result);
         },
         error(err)
@@ -104,8 +106,10 @@ export class CreateMemberComponent implements OnInit
   imageCropped(event: ImageCroppedEvent)
   {
     if (event.blob != null)
+      console.log(event.blob);
     {
       this.croppedImage = event.blob;
+      console.log('nouvelle image = ' + this.croppedImage);
     }
     // event.blob can be used to upload the cropped image
   }

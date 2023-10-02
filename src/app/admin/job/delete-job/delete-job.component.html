@@ -1,1 +1,13 @@
-<p>delete-job works!</p>
+<div class="flex w-full justify-center mt-5">
+  <div class="w-2/3 grid grid-cols-3 gap-5 justify-self-center">
+    <div *ngFor="let job of jobs"
+         class="border-2 border-[#122D4F] rounded-xl">
+      <div class="flex flex-col gap-y-5 p-3">
+        <h4 class="text-lg text-center">{{job.name}}</h4>
+        <button (click)="deleteJob(job.id)" class="text-[#EEF7FF] bg-[#122D4F] rounded-xl py-2 px-1">Supprimer
+                                                                                                     le job
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
