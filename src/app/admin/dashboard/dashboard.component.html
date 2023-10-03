@@ -2,72 +2,73 @@
   <div class="grid justify-items-stretch gap-5">
     <h2 class="text-center text-5xl">Gestion Contenus</h2>
     <div class="w-full flex gap-x-10 justify-center">
-      <section class="grid justify-items-center border-2 border-[#122D4E] rounded-xl">
+      <section class="grid justify-items-center border-2 border-[#122D4E] rounded-xl min-w-[25%]">
         <div class="border-b-2 border-[#122D4E] w-full">
           <h3 class="text-2xl text-center py-3 uppercase font-medium">Staff</h3>
         </div>
-        <div class="grid grid-cols-2">
-          <section class="border-r border-[#122D4E]">
+        <div class="grid grid-cols-2 w-full text-center">
+          <section class="border-r border-[#122D4E] ">
             <div class="border-b border-[#122D4E]">
               <h4 class="text-xl text-center py-3 uppercase font-medium">Membre</h4>
             </div>
-            <div class="grid grid-rows-3 gap-y-2 p-5">
-              <a class="underline underline-offset-4" routerLink="/admin/member/create">Ajouter un membre</a>
-              <!-- <a class="underline underline-offset-4" routerLink="/admin/member/update">modifier un membre</a> -->
-              <a class="underline underline-offset-4" routerLink="/admin/member/delete">retirer un membre</a>
+            <div class="grid grid-rows-3 gap-y-5 p-5">
+              <a class="underline underline-offset-4" routerLink="/admin/member/create">Ajouter</a>
+              <!-- <a class="underline underline-offset-4" routerLink="/admin/member/update">modifier</a> -->
+              <a class="underline underline-offset-4" routerLink="/admin/member/delete">retirer</a>
             </div>
           </section>
           <section class="border-r border-[#122D4E]">
             <div class="border-b border-[#122D4E]">
               <h4 class="text-xl text-center py-3 uppercase font-medium">Job</h4>
             </div>
-            <div class="grid grid-rows-3 gap-y-2 p-5">
-              <a class="underline underline-offset-4" routerLink="/admin/job/create">Ajouter un job</a>
-              <!-- <a class="underline underline-offset-4" routerLink="/admin/job/update">modifier un job</a> -->
-              <a class="underline underline-offset-4" routerLink="/admin/job/delete">retirer un job</a>
+            <div class="grid grid-rows-3 gap-y-5 p-5">
+              <a class="underline underline-offset-4" routerLink="/admin/job/create">Ajouter</a>
+              <a class="underline underline-offset-4" routerLink="/admin/job/update">modifier</a>
+              <a class="underline underline-offset-4" routerLink="/admin/job/delete">retirer</a>
             </div>
           </section>
         </div>
       </section>
-      <section class="grid justify-items-center border-2 border-[#122D4E] rounded-xl">
+      <section class="grid justify-items-center border-2 border-[#122D4E] rounded-xl min-w-[25%]">
         <div class="border-b-2 border-[#122D4E] w-full">
           <h3 class="text-2xl text-center py-3 uppercase font-medium">blog</h3>
         </div>
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-2 w-full text-center">
           <section class="border-r border-[#122D4E]">
             <div class="border-b border-[#122D4E]">
               <h4 class="text-xl text-center py-3 uppercase font-medium">Article</h4>
             </div>
-            <div class="grid grid-rows-3 gap-y-2 p-5">
-              <a class="underline underline-offset-4" routerLink="/admin/article/create">Écrire un article</a>
-              <!-- <a class="underline underline-offset-4" routerLink="/admin/article/update">Modifier un article</a> -->
-              <a class="underline underline-offset-4" routerLink="/admin/article/delete">Supprimer un article</a>
+            <div class="grid grid-rows-3 gap-y-5 p-5">
+              <a class="underline underline-offset-4" routerLink="/admin/article/create">Écrire</a>
+              <!-- <a class="underline underline-offset-4" routerLink="/admin/article/update">Modifier</a> -->
+              <a class="underline underline-offset-4" routerLink="/admin/article/delete">Supprimer</a>
             </div>
           </section>
           <section>
             <div class="border-b border-[#122D4E]">
               <h4 class="text-xl text-center py-3 uppercase font-medium">Catégorie</h4>
             </div>
-            <div class="grid grid-rows-3 gap-y-2 p-5">
-              <a class="underline underline-offset-4" routerLink="/admin/category/create">Ajout Catégorie</a>
-              <!-- <a class="underline underline-offset-4" routerLink="/admin/category/update">Modification Categorie</a> -->
-              <a class="underline underline-offset-4" routerLink="/admin/category/delete">Supprimer Categorie</a>
+            <div class="grid grid-rows-3 gap-y-5 p-5">
+              <a class="underline underline-offset-4" routerLink="/admin/category/create">Ajouter</a>
+              <!-- <a class="underline underline-offset-4" routerLink="/admin/category/update">Modifier</a> -->
+              <a class="underline underline-offset-4" routerLink="/admin/category/delete">Supprimer</a>
             </div>
           </section>
         </div>
       </section>
-      <section class="grid justify-items-center border-2 border-[#122D4E] rounded-xl">
+      <section class="grid justify-items-center border-2 border-[#122D4E] rounded-xl ">
         <div class="border-b-2 border-[#122D4E] w-full">
           <h3 class="text-2xl text-center py-3 uppercase font-medium">Contenus Gratuits</h3>
         </div>
-        <div class="grid grid-cols-3">
+        <div class="grid grid-cols-2 w-full text-center">
           <section class="border-r border-[#122D4E]">
             <div class="border-b border-[#122D4E]">
               <h4 class="text-xl text-center py-3 uppercase font-medium">Étude de cas</h4>
             </div>
-            <div class="grid grid-rows-3 gap-y-2 p-5">
-              <a class="underline underline-offset-4" routerLink="/admin/case-study/create">Ajouter une video</a>
-              <!-- <a class="underline underline-offset-4" routerLink="/admin/case-study/update">Modifier une video</a> -->
+            <div class="grid grid-rows-2 gap-y-5 p-5 h-2/3 ">
+              <a class="underline underline-offset-4 " routerLink="/admin/case-study/create">Ajouter
+                                                                                             une
+                                                                                             video</a>
               <a class="underline underline-offset-4" routerLink="/admin/case-study/delete">Supprimer une video</a>
             </div>
           </section>
@@ -78,9 +79,7 @@
             <div class="grid grid-rows-1 p-5">
               <a class="underline underline-offset-4" routerLink="/admin/live-conference/update">Modifier le lien</a>
             </div>
-          </section>
-          <section>
-            <div class="border-b border-[#122D4E]">
+            <div class="border-b border-t border-[#122D4E]">
               <h4 class="text-xl text-center py-3 uppercase font-medium">Café entrepreneur</h4>
             </div>
             <div class="grid grid-rows-1 p-5">

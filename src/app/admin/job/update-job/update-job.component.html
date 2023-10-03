@@ -1,1 +1,40 @@
-<p>update-job works!</p>
+<div class="flex w-full justify-center mt-5">
+  <div class="w-2/3 grid grid-cols-3 gap-5 justify-self-center">
+    <div *ngFor="let job of jobs; let i = index;"
+         class="border-2 border-[#122D4F] rounded-xl">
+      <div class="flex flex-col gap-y-5 p-3">
+        <h4 class="text-lg text-center">{{job.name}}</h4>
+        <button (click)="ModifyThisJob(job.id, i)" class="text-[#EEF7FF] bg-[#122D4F] rounded-xl py-2 px-1">Modifier
+                                                                                                            le job
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="showModal"
+     class="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-20"
+     id="updateJobModal">
+  <div class="flex justify-center items-center my-[10%] bg-[#EEF7FF] rounded-xl">
+    <form (ngSubmit)="submitForm()" [formGroup]="form"
+          class="grid grid-rows-2 rounded-xl border-2 border-[#122D4E]">
+      <div class="px-5 py-8">
+        <label class="me-2 text-lg font-medium" for="name">Nom du Job :</label>
+        <input class="rounded-xl min-w-[250px] text-center border border-[#122D4E]" formControlName="name"
+               id="name" type="text" value="{{jobSelected?.name}}">
+      </div>
+      <div class="w-full grid grid-cols-2">
+        <div
+          class="w-2/3  place-self-center bg-[#122D4F] text-[#EEF7FF] rounded-xl"
+          id="btnForm">
+          <button class="font-medium text-center w-full p-2" type="submit">Modifier le Job</button>
+        </div>
+        <div
+          class="w-2/3 place-self-center bg-[#122D4F] text-[#EEF7FF] rounded-xl"
+          id="btnFormCancel">
+          <button (click)="showModal = false" class="font-medium text-center w-full p-2">Annuler</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit
   isLargeScreen: boolean = true;
 
   constructor(private formBuilder: FormBuilder, authService: AuthService,
-              private screenWidthService: ScreenWidthService,
+              screenWidthService: ScreenWidthService,
               private router: Router)
   {
     this.authService = authService;

@@ -65,23 +65,33 @@ export class AdminService
     const imageinput = document.getElementById('avatarFile') as HTMLInputElement;
     const imageFile = imageinput?.files?.[0];
     console.log(imageFile);
-    return this.http.post<any>(this.apiUrl + 'member/new', formData);
+    return this.http.post<any>(this.apiUrl
+      + 'member/new', formData);
   }
 
   deleteMember(id: number)
   {
-    return this.http.delete(this.apiUrl + 'member/delete/' + id);
+    return this.http.delete(this.apiUrl
+      + 'member/delete/' + id);
   }
 
   //--------------------------- JOB --------------------------------//
   newJob(formData: FormGroup)
   {
-    return this.http.post<any>(this.apiUrl + 'job/new', formData);
+    return this.http.post<any>(this.apiUrl
+      + 'job/new', formData);
+  }
+
+  updateJob(formData: FormGroup, id: number)
+  {
+    return this.http.post<any>(this.apiUrl
+      + 'job/update/' + id, formData);
   }
 
   deleteJob(id: number)
   {
-    return this.http.delete<any>(this.apiUrl + 'job/delete/' + id);
+    return this.http.delete<any>(this.apiUrl
+      + 'job/delete/' + id);
   }
 
 
@@ -134,47 +144,55 @@ export class AdminService
         formData.append('paragraphs', JSON.stringify(paragraphsData));
       }
     }
-    return this.http.post<any>(this.apiUrl + 'article/new', formData);
+    return this.http.post<any>(this.apiUrl
+      + 'article/new', formData);
   }
 
   deleteArticle(id: number)
   {
-    return this.http.delete(this.apiUrl + 'article/delete/' + id);
+    return this.http.delete(this.apiUrl
+      + 'article/delete/' + id);
   }
 
   //------------------------ CATEGORY ------------------------------//
   newCategory(formData: any)
   {
-    return this.http.post<any>(this.apiUrl + 'category/new', formData);
+    return this.http.post<any>(this.apiUrl
+      + 'category/new', formData);
   }
 
   deleteCategory(id: number)
   {
-    return this.http.delete(this.apiUrl + 'category/delete/' + id);
+    return this.http.delete(this.apiUrl
+      + 'category/delete/' + id);
   }
 
   //----------------------- CASE STUDY ------------------------------//
   newCaseStudy(formData: any)
   {
-    return this.http.post<any>(this.apiUrl + 'case_study/new', formData);
+    return this.http.post<any>(this.apiUrl
+      + 'case_study/new', formData);
   }
 
   deleteCase(id: number)
   {
-    return this.http.delete(this.apiUrl + 'case_study/delete/' + id);
+    return this.http.delete(this.apiUrl
+      + 'case_study/delete/' + id);
   }
 
   //--------------------- LIVE CONFERENCE -----------------------------//
   updateLiveConferenceLink(formData: any)
   {
-    return this.http.post<any>(this.apiUrl + 'live-conference/update', formData);
+    return this.http.post<any>(this.apiUrl
+      + 'live-conference/update', formData);
   }
-
+  
   //---------------------- BUSINESS COFFEE ---------------------------//
 
   updateBusinessCoffeeInfos(formData: any)
   {
-    return this.http.post<any>(this.apiUrl + 'business-coffee-owner/update', formData);
+    return this.http.post<any>(this.apiUrl
+      + 'business-coffee-owner/update', formData);
   }
 
 }

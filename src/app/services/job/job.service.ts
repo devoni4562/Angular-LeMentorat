@@ -17,4 +17,9 @@ export class JobService
   {
     return this.http.get<any>(this.apiURL);
   }
+
+  getOneJob(id: number)
+  {
+    return this.http.get<any>(this.apiURL + id);
+  }
 }

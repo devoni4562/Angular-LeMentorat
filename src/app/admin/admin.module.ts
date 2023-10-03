@@ -15,7 +15,6 @@ import {CreateCategoryComponent} from './category/create-category/create-categor
 import {UpdateCategoryComponent} from './category/update-category/update-category.component';
 import {DeleteCategoryComponent} from './category/delete-category/delete-category.component';
 import {CreateCaseComponent} from './case-study/create-case/create-case.component';
-import {UpdateCaseComponent} from './case-study/update-case/update-case.component';
 import {DeleteCaseComponent} from './case-study/delete-case/delete-case.component';
 import {CreateJobComponent} from './job/create-job/create-job.component';
 import {UpdateJobComponent} from './job/update-job/update-job.component';
@@ -39,7 +38,6 @@ import {BusinessCoffeeComponent} from './business-coffee/business-coffee.compone
     UpdateCategoryComponent,
     DeleteCategoryComponent,
     CreateCaseComponent,
-    UpdateCaseComponent,
     DeleteCaseComponent,
     CreateJobComponent,
     UpdateJobComponent,

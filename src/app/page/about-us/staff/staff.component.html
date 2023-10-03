@@ -11,7 +11,7 @@
             class="text-center text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
           <div class="flex justify-center mb-3">
             <img
-              [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/avatar/'+member.job.name+ '/'+member.email+'/' + member.avatar"
+              [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/avatar/'+member.job.name.replace(' ', '_')+ '/'+member.email+'/' + member.avatar"
               alt="{{member.pseudo}}"
               class="rounded-full"
               height="145px"
@@ -33,7 +33,7 @@
                 class="text-center text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
               <div class="flex justify-center mb-3">
                 <img
-                  [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/avatar/'+member.job.name+ '/'+member.email+'/' + member.avatar"
+                  [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/avatar/'+member.job.name.replace(' ', '_')+ '/'+member.email+'/' + member.avatar"
                   alt="{{member.pseudo}}"
                   class="rounded-full"
                   height="145px"
@@ -57,7 +57,7 @@
               class="text-center text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
             <div class="flex justify-center mb-3">
               <img
-                [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/avatar/'+member.job.name+ '/'+member.email+'/' + member.avatar"
+                [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/avatar/'+member.job.name.replace(' ', '_')+ '/'+member.email+'/' + member.avatar"
                 alt="{{member.pseudo}}"
                 class="rounded-full"
                 height="145px"
@@ -78,7 +78,7 @@
               class="text-center text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
             <div class="flex justify-center mb-3">
               <img
-                [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/avatar/'+member.job.name+ '/'+member.email+'/' + member.avatar"
+                [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/avatar/'+member.job.name.replace(' ', '_')+ '/'+member.email+'/' + member.avatar"
                 alt="{{member.pseudo}}"
                 class="rounded-full"
                 height="145px"
@@ -101,7 +101,7 @@
                 class="text-center text-lg font-semibold my-3">{{member.firstname | uppercase | slice:0:1}}{{member.firstname | slice:1}}</h4>
               <div class="flex justify-center mb-3">
                 <img
-                  [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/avatar/'+member.job.name+ '/'+member.email+'/' + member.avatar"
+                  [src]="'https://api-le-mentorat-fabdab54a40e.herokuapp.com/res/avatar/'+member.job.name.replace(' ', '_')+ '/'+member.email+'/' + member.avatar"
                   alt="{{member.pseudo}}"
                   class="rounded-full"
                   height="145px"
