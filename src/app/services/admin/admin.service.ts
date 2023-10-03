@@ -169,4 +169,12 @@ export class AdminService
   {
     return this.http.post<any>(this.apiUrl + 'live-conference/update', formData);
   }
+
+  //---------------------- BUSINESS COFFEE ---------------------------//
+
+  updateBusinessCoffeeInfos(formData: any)
+  {
+    return this.http.post<any>(this.apiUrl + 'business-coffee-owner/update', formData);
+  }
+
 }

@@ -1,1 +1,26 @@
-<p>business-coffee works!</p>
+<div class="flex justify-center items-center my-[10%]">
+  <form (ngSubmit)="submitForm()" [formGroup]="form"
+        class="grid grid-rows-4 rounded-xl border-2 border-[#122D4E] mt-10">
+    <div class="px-5 py-8">
+      <label class="me-2 text-lg font-medium" for="date">Date du prochain café :</label>
+      <input class="rounded-xl min-w-[250px] text-center border border-[#122D4E]" formControlName="date"
+             id="date" type="date">
+    </div>
+    <div class="px-5 py-8">
+      <label class="me-2 text-lg font-medium" for="place">Lieu du prochain café :</label>
+      <input class="rounded-xl min-w-[250px] text-center border border-[#122D4E]" formControlName="place"
+             id="place" type="text">
+    </div>
+    <div class="px-5 py-8">
+      <label class="me-2 text-lg font-medium" for="link">lien pour l'inscription :</label>
+      <input class="rounded-xl min-w-[250px] text-center border border-[#122D4E]" formControlName="link"
+             id="link" type="text">
+    </div>
+    <div
+      class="w-2/3 row-start-4 place-self-center bg-[#122D4F] text-[#EEF7FF] rounded-xl"
+      id="btnForm">
+      <button class="font-medium text-center w-full p-2" type="submit">Modifier les informations</button>
+    </div>
+  </form>
+</div>
+

@@ -63,4 +63,15 @@ export class FormsService
     );
   }
 
+  getCoffeeOwnerForm()
+  {
+    return this.fb.group(
+      {
+        date: ['', Validators.required],
+        place: ['', Validators.required],
+        link: ['', Validators.required]
+      }
+    );
+  }
+
 }

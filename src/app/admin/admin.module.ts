@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {CommonModule, NgOptimizedImage} from '@angular/common';
+import {CommonModule, DatePipe, NgOptimizedImage} from '@angular/common';
 
 import {AdminRoutingModule} from './admin-routing.module';
 import {AdminComponent} from "./admin/admin.component";
@@ -21,8 +21,8 @@ import {CreateJobComponent} from './job/create-job/create-job.component';
 import {UpdateJobComponent} from './job/update-job/update-job.component';
 import {DeleteJobComponent} from './job/delete-job/delete-job.component';
 import {ImageCropperModule} from "ngx-image-cropper";
-import { LiveConferenceComponent } from './live-conference/live-conference.component';
-import { BusinessCoffeeComponent } from './business-coffee/business-coffee.component';
+import {LiveConferenceComponent} from './live-conference/live-conference.component';
+import {BusinessCoffeeComponent} from './business-coffee/business-coffee.component';
 
 
 @NgModule({
@@ -54,7 +54,8 @@ import { BusinessCoffeeComponent } from './business-coffee/business-coffee.compo
     ReactiveFormsModule,
     ImageCropperModule,
     NgOptimizedImage
-  ]
+  ],
+  providers: [DatePipe]
 })
 export class AdminModule
 {
