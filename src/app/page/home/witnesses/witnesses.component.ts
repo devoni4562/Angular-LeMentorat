@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {WitnessesService} from '../../../services/witnesses/witnesses.service';
 import {ScreenWidthService} from "../../../services/screen-width/screen-width.service";
+import {JobService} from "../../../services/job/job.service";
 
 @Component({
   selector: 'app-index-witnesses',
@@ -10,13 +11,21 @@ import {ScreenWidthService} from "../../../services/screen-width/screen-width.se
 export class WitnessesComponent implements OnInit
 {
   witnesses: any[] = [];
+  jobName!: string;
   isLargeScreen: boolean = true;
 
-  constructor(private screenWidthService: ScreenWidthService, private witnessesService: WitnessesService)
+  constructor(private screenWidthService: ScreenWidthService, private witnessesService: WitnessesService,
+              private jobService: JobService)
   {
     this.screenWidthService.isLargeScreen$.subscribe(isLargeScreen =>
     {
       this.isLargeScreen = isLargeScreen;
+    });
+
+    this.jobService.getOneJob(3).subscribe(job =>
+    {
+      this.jobName = job.name.replace(' ', '_');
+      console.log(this.jobName);
     });
   }
 
